@@ -1,0 +1,189 @@
+:root {
+    --pink: #ef5777;
+    --withe: #fff;
+    --black: #222;
+    --transparent-white: rgba(255, 255, 255, 0.3);
+    --border: .1rem solid var(--black);
+    --box-shadow: 0 .6rem .7rem rgba(16, 9, 44, 0.1);
+}
+
+
+body{
+    background: linear-gradient(to top left, #5dc1ce, #d9aed7, #d5ebed);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation{
+    padding: 2px;
+    height: 5rem;
+    /* background: var(--transparent-white); */
+    background: rgb(35, 112, 226);
+    box-shadow: var(--box-shadow);
+    border-radius: 4px;
+    backdrop-filter: blur(.5rem);
+}
+
+.navigation ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;    
+}
+
+.navigation ul li{
+    padding: 12px;
+    border-radius: 5px;
+    /* border: var(--border); */
+}
+
+.navigation ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(243, 245, 246);
+}
+
+.navigation ul li:hover{
+    transform: scale(1.11);
+    transition: .25s;
+}
+
+
+.header{
+    margin: 5px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin-top: 10px;
+    font-size: 2rem;
+    color: rgb(58, 58, 247);
+    margin: 5px;
+}
+
+p{
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin: 5px;
+}
+
+.header .profile{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: var(--border); */
+    background: var(--transparent-white);
+    backdrop-filter: blur(.7rem);
+    box-shadow: var(--box-shadow);
+    width: 900px;
+    height: 500px;
+    text-align: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.header .profile:hover{
+    flex-direction: row-reverse;
+}
+
+.header .profile .description{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header .profile .description h3{
+    color: blue;
+    margin-bottom: 20px;
+}
+
+.header .profile .img{
+    width: 300px;
+    border-radius: 0px 45px 0 45px;
+}
+.header .profile:hover .img{
+    transform: scale(1.02);
+    transition: .25s;
+}
+
+.header .profile:hover .description{
+    transform: scale(1.02);
+    transition: .25s;
+}
+
+.date-contact{
+    margin-top: 2.5rem;
+    /* text-align: center; */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.date-contact h1{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.container .redes-sociales{
+    height: 400px;
+    width: 400px;
+    /* border: var(--border); */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background: var(--transparent-white);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(.7rem);
+    align-items: center;
+}
+
+.container .redes-sociales ul{
+    margin-top: 2rem;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container .redes-sociales h2{
+    margin-top: 1rem;
+}
+
+.container .redes-sociales ul li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+.container .redes-sociales ul li a:hover{
+    color: rgb(36, 36, 237);
+}
+
+.container .redes-sociales ul li a i{
+    font-size: 1.2rem;
+    color: blue;
+    margin-left: 5px;
+}
+
+.container .redes-sociales ul li:hover{
+    transform: translate(7px);
+    /* transform: translateX(3px); */
+    transition: .2s;
+}

@@ -1,0 +1,242 @@
+:root {
+    --withe: #fff;
+    --black: #222;
+    --transparent-white: rgba(255, 255, 255, 0.3);
+    --border: 0.12rem solid var(--black);
+    --box-shadow: 0 0.6rem 0.7rem rgba(16, 9, 44, 0.1);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(to top left, #d84824, #30df82, #228ae6);
+}
+
+section{
+    padding: 10px;
+}
+
+section h1{
+    text-align: center;
+    font-size: 3rem;
+    font-style: italic;
+    color: red;
+    margin-bottom: 2rem;
+}
+
+header{
+    width: 100%;
+}
+
+header h3{
+    font-size: 2.3rem;
+    color: orange;
+
+}
+
+section header p{
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+}
+
+header .family-img{
+    margin-top: 1rem;
+    display: grid;
+    place-items: center;
+}
+
+header #img{
+    width: 950px;
+    height: 650px;
+    border-radius: 10px;
+    text-align: center;
+    /* position: relative; */
+}
+
+header .imagen{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header #img:hover .imagen{
+    transform: scale(1.02);
+    transition: .2s;
+}
+
+.list{
+    margin-top: 2rem;
+}
+
+.list h2{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(206, 140, 15);
+    font-style: italic;
+}
+
+.list .list-container{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+}
+
+.list .list-container .list-name{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 450px;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--transparent-white);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(.5rem);
+    padding: 1rem;
+    /* justify-content: space-evenly; */
+}
+
+.list .list-container .list-name p{
+    font-size: 1.5rem;
+    color: blue;
+    font-style: italic;
+}
+
+.list .list-container .list-name:hover ul li{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.list .list-container .list-name ul{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.list .list-container .list-name ul li{
+    font-size: 1.3rem;
+    margin: 10px;
+}
+
+.album-fotos{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.album-fotos h2{
+    font-size: 2.5rem;
+    color: #d84824;
+    text-align: center;
+    font-style: italic;
+}
+
+.album-fotos .img-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1.3rem;
+}
+
+.album-fotos .img-container .photos{
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.img-container .photos img{
+    width: 470px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(50deg);
+    }
+}
+
+
+.img-container .photos img:hover{
+    /* transform: scale(1.1);
+    transform: scaleX(10deg); */
+    /* animation: rotateAnimation 6s linear infinite; */
+    /* transform: rotate(20deg) scale(1.1) translateY(10px); */
+    border-radius: 50%;
+}
+
+.img-container .photos:hover{
+    transform: rotate(20deg) scale(1.1) translateY(10px);
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.img-container .photos h3{
+    text-align: center;
+    font-size: 1.7rem;
+    color: blue;
+    font-style: italic;
+}
+
+.img-container .photos:hover h3{
+    opacity: 0;
+}
+
+.history{
+    margin-top: 1rem;
+    padding: 15px;
+    display: grid;
+    place-items: center;
+    background: var(--transparent-white);
+    box-shadow: var(--box-shadow);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.history h2{
+    font-size: 1.7rem;
+}
+
+.history p{
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-top: 5px;
+}
+
+.contact{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact h2{
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.contact p{
+    font-size: 1.3rem;
+    margin-left: 20px;
+}
+
+.contact p i{
+    color: rgb(30, 69, 224);
+}
+

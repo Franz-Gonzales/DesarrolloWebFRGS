@@ -1,0 +1,445 @@
+
+/* VARIABLES */
+:root {
+    --pink: #ef5777;
+    --withe: #fff;
+    --black: #222;
+    --transparent-white: rgba(255, 255, 255, .3);
+    --border: .2rem solid var(--black);
+    --box-shadow: 0 .6rem .7rem rgba(0, 0, 0, .1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(to top left, #dbb7ef, #679ddc, #dc83dd);
+}
+
+header{
+    width: 100%;
+    height: 5rem;
+    /* border: 1px solid #333; */
+    margin: 5px;
+    background: var(--transparent-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 4px;
+    backdrop-filter: blur(.8rem);
+}
+
+header .navigation-menu{
+    height: 100%;
+}
+
+header .navigation-menu .menu-ciudad{
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    align-items: center;
+    
+}
+
+.container{
+    margin: 0;
+}
+
+.navigation-menu .menu-ciudad .links{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.navigation-menu .menu-ciudad .links a{
+    padding: 0.7rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(225, 111, 70);
+    transition: 0.8s;
+    font-weight: lighter;
+    font-style: italic;
+}
+.navigation-menu .menu-ciudad .links a:hover{
+    background: orangered;
+    color: aliceblue;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.title h1{
+    color: red;
+    font-size: 2rem;
+}
+
+.title p{
+    margin-top: 7px;
+    font-style: italic;
+}
+
+.title p span{
+    font-weight: bold;
+}
+
+.container{
+    margin: 5px;
+}
+
+.container h1{
+    color: green;
+    margin: 2px;
+}
+
+.container .hitory{
+    margin-top: 10px;
+}
+
+.container .hitory h4{
+    color: red;
+    margin-left: 10px;
+}
+
+.container .hitory p{
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.container .contenido{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.container .contenido .sucre{
+    width: 600px;
+    border-radius: 3px;
+}
+
+.container .contenido .parrafo{
+    padding: 5px 15px;
+    font-size: 1.1rem;
+    text-align: justify;
+    max-width: 500px;
+}
+
+.hitory .arrival{
+    display: flex;
+    margin-top: 2rem;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.hitory .arrival .elements{
+    max-width: 34rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    
+}
+
+.hitory .arrival img{
+    width: 400px;
+    border-radius: 3px;
+}
+.hitory .arrival #sub-title{
+    color: red;
+}
+
+.hitory .arrival .elements{
+    width: auto;
+}
+
+.hitory .arrival .elements p{
+    font-size: 1.3rem;
+}
+
+.hitory #sub-title-two{
+    margin-top: 10px;
+    color: red;
+    text-align: center;
+}
+
+.hitory .visita{
+    display: grid;
+    place-items: center;
+}
+
+.hitory .visita #parrafo-visita{
+    font-size: 1.1rem;
+    width: auto;
+    text-align: justify;
+}
+
+.cultura{
+    margin-top: 2rem;
+}
+
+.cultura h2{
+    text-align: center;
+    font-size: 2.4rem;
+    color: green;
+}
+
+.cultura .cultura-sucre{
+    display: flex;
+    margin-top: 10px;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+.cultura .cultura-sucre .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    padding: 10px;
+}
+
+.cultura .cultura-sucre .content h3{
+    margin-top: 5px;
+    font-size: 1.3rem;
+    color: rgb(193, 44, 44);
+}
+
+.cultura .cultura-sucre .content .content-img{
+    align-items: center;
+    width: auto;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.cultura-sucre .content .content-img .text{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--transparent-white);
+    backdrop-filter: blur(.5rem);
+    padding: 1.9rem;
+    transition: .2s linear;
+    transform: translateY(calc(100% - 0rem));
+}
+.cultura-sucre .content .content-img .text p{
+    font-size: 1.1rem;
+}
+
+.cultura-sucre .content .content-img .text p a{
+    color: #ef5777;
+}
+
+.cultura-sucre .content .content-img:hover .text{
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.cultura-sucre .content .content-img:hover .image{
+    transform: scale(1.1);
+}
+
+.cultura .cultura-sucre .content .image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .25s linear;
+}
+
+
+
+.lugar-turist{
+    margin-top: 2rem;
+}
+
+.lugar-turist h2{
+    text-align: center;
+    font-size: 2.4rem;
+    color: green;
+}
+
+.lugar-turist .container-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.lugar-turist .container-img .items-img{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.lugar-turist .container-img .items-img .img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .25s linear;
+
+}
+
+.container-img .items-img .text-parrafo{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    bottom: 0;
+    background: var(--transparent-white);
+    backdrop-filter: blur(.3rem);
+    transition: .2s linear;
+    /* transform: translateY(calc(100% - 1rem)); */
+}
+
+.container-img .items-img:hover .text-parrafo{
+    opacity: 1;
+    transition: .3s;
+}
+
+.container-img .items-img .text-parrafo h3{
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-img .items-img .text-parrafo p{
+    font-size: 1.4rem;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 200px;
+}
+
+
+.mi-ciudad{
+    margin-top: 4rem;
+}
+
+.mi-ciudad h2{
+    text-align: center;
+    font-size: 2.4rem;
+    color: green;
+}
+
+.mi-ciudad p{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 3rem;
+    color: #ef5777;
+}
+
+.mi-ciudad .container-photos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.mi-ciudad .container-photos img{
+    width: 600px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-top: 2rem;
+}
+
+.mi-ciudad .container-photos img:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.video-sucre{
+    margin-top: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.video-sucre video{
+    width: 1200px;
+    border-radius: 10px;
+}
+
+.video-sucre video:hover{
+    box-shadow: -5px 6px 18px #333;
+    transition: .3s;
+    transform: scale(1.001);
+}
+
+.video-sucre .description{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+
+
+.events-festivales{
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.events-festivales h2{
+    text-align: center;
+    font-size: 2.4rem;
+    color: green;
+}
+
+.events-festivales h3{
+    padding: 15px;
+}
+
+.events-festivales .festival{
+    margin-top: 10px;
+    width: 1200px;
+    padding: 15xp;
+    /* background: var(--transparent-white);
+    backdrop-filter: blur(.5rem); */
+}
+
+.events-festivales .festival .details{
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--transparent-white);
+    backdrop-filter: blur(.8rem);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.events-festivales .festival .details img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+.events-festivales .festival .details p{
+    font-size: 1.5rem;
+    width: 500px;
+    color: #d0274b;
+    text-align: justify;
+}
