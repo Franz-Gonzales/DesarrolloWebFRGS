@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            background: linear-gradient(#7ec9dc, #e38dd8, #e0ba6e);
+            margin-bottom: 4rem;
+            background-repeat: no-repeat;
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgb(17, 17, 23);
+        }
+
+        h2 {
+            color: red;
+            font-family: sans-serif;
+            font-size: 2rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Formulario</h2>
+    <h3>Escribir una cadena para encontrar la palabra mas larga</h3>
+    <form action="procesar.php" method="get">
+        <label for="cadena">Cadena:</label>
+        <input type="text" name="cadena">
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+
+</html>

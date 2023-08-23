@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            background: linear-gradient(#7ec9dc, #e38dd8, #e0ba6e);
+            margin-bottom: 4rem;
+            background-repeat: no-repeat;
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgb(17, 17, 23);
+        }
+
+        h2 {
+            color: red;
+            font-size: 2rem;
+            font-style: italic;
+            font-family: sans-serif;
+        }
+
+        h3 {
+            font-family: sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Crea un formulario en html que solicite un numero,  y llame a dibujar.php que dibuja un tablero de ajedrez con la cantidad de filas y columnas del numero introducido por el usuario. -->
+
+    <h2>Formulario</h2>
+    <h3>Ingrese el número de filas y columnas para dibujar el tablero de ajedrez</h3>
+    <form action="dibujar.php" method="get">
+        <label for="numero">Número: </label>
+        <input type="number" name="numero" id="numero" required>
+        <input type="submit" value="Dibujar">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    background: linear-gradient(to top left, #a7eded, #c3d877, #df94d3);
+    margin-top: 3rem;
+    border-radius: 10px;
+    height: 800px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -5px 6px 18px rgb(101, 100, 100);
+    margin-bottom: 2rem;
+}
+
+.ajedrez {
+    display: grid;
+    place-items: center;
+}
+
+h2 {
+    color: blue;
+    font-size: 1.7rem;
+    font-style: italic;
+    font-family: sans-serif;
+}
+
+.tablero {
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin-top: 1rem;
+}
+
+.items {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.blanco {
+    background-color: white;
+}
+
+.negro {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario1</title>
+
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            background: linear-gradient(#7ec9dc, #e38dd8, #e0ba6e);
+            margin-bottom: 4rem;
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgb(17, 17, 23);
+        }
+
+        h2 {
+            color: red;
+            font-family: sans-serif;
+            font-size: 2rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 4.- Cree un programa  para solicitar una cadena por formularios y llame a  invertir.php que imprime  la cadena invertida. -->
+    <h2>Formulario 1</h2>
+    <h3>Escribe una cadena para invertir</h3>
+    <form action="invertir.php" method="post">
+        <label for="cadena">Cadena 1:</label>
+        <input type="text" name="primeracadena" id="cadena" required>
+        <br><br>
+        <label for="cadena">Cadena 2:</label>
+        <input type="text" name="segundacadena" id="cadena" required>
+        <br><br>
+        <input type="submit" value="Invertir">
+    </form>
+
+    <h2>Formulario 2</h2>
+    <h3>Escribe una cadena para invertir</h3>
+    <form action="invertir.php" method="post">
+        <label for="cadena">Cadena 1:</label>
+        <input type="text" name="primeracadena" id="cadena" required>
+        <br><br>
+        <label for="cadena">Cadena 2:</label>
+        <input type="text" name="segundacadena" id="cadena" required>
+        <br><br>
+        <input type="submit" value="Invertir">
+    </form>
+
+    <h2>Formulario 3</h2>
+    <h3>Escribe una cadena para invertir</h3>
+    <form action="invertir.php" method="post">
+        <label for="cadena">Escribe una Cadena:</label>
+        <input type="text" name="cadena" id="cadena" required>
+        <input type="submit" value="Invertir">
+    </form>
+</body>
+
+</html>
