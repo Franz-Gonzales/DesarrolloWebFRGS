@@ -1,0 +1,130 @@
+:root {
+  --rojo: red;
+  --verde: rgb(36, 169, 115);
+  --azul: rgb(31, 31, 94);
+  --amarillo: yellow;
+  --naranja: orange;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.container .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .header .title {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--rojo);
+  width: 100%;
+}
+.container .header .title h2 {
+  color: white;
+}
+.container .header .title p {
+  margin-top: 8px;
+  color: white;
+}
+.container .header .navigation {
+  background: var(--verde);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+}
+.container .header .navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: center;
+}
+.container .header .navigation ul li {
+  color: white;
+}
+.container .header .navigation .lista-uno {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.container .header .navigation .lista-dos {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: flex-end;
+}
+.container .header .navigation .lista-dos li {
+  margin-right: 50px;
+}
+.container .menu {
+  display: flex;
+  flex-direction: row;
+}
+.container .menu .barra-lateral {
+  display: flex;
+  flex-direction: column;
+  background: #e2e0e0;
+  padding: 20px 10px 10px 10px;
+}
+.container .menu .barra-lateral p {
+  margin-bottom: 10px;
+}
+.container .menu .barra-lateral h2 {
+  margin-bottom: 10px;
+}
+.container .menu .barra-lateral .items-uno {
+  width: 400px;
+  height: 400px;
+  background: #c6c3c3;
+  margin-bottom: 10px;
+}
+.container .menu .barra-lateral .componentes {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 45px;
+}
+.container .menu .barra-lateral .componentes .componentes-items {
+  width: 400px;
+  height: 200px;
+  background: #c6c3c3;
+  margin-bottom: 5px;
+}
+.container .menu .contenido-tipo-blog {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container .menu .contenido-tipo-blog .contenido-items {
+  width: 668px;
+  height: 200px;
+  background: #c6c3c3;
+}
+.container .footer {
+  display: grid;
+  place-items: center;
+  background: #c6c3c3;
+  height: 70px;
+}
