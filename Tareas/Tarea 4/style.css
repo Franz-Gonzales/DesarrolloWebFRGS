@@ -1,0 +1,445 @@
+:root{
+    --background-white: rgba(255, 255, 255, 0.595);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: linear-gradient(to top left, #da52df, #a9c448, #15cfbc);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container header{
+    background: rgba(0, 64, 255, 0.888);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container header h1{
+    color: rgba(255, 0, 0, 0.615);
+}
+
+.container header h2{
+    color: white;
+}
+
+.container .navigation{
+    background: rgba(255, 255, 255, 0.595);
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.container .navigation ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.container .navigation ul li a{
+    font-size: 1.2rem;
+    background: rgb(21, 80, 218);
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+.container .navigation ul li:hover{
+    transform: scale(1.1);
+}
+
+.container .navigation ul li:hover a{
+    transition: 0.53s;
+    background: white;
+    color: blue;
+}
+
+
+
+
+
+
+
+/* ESTILOS PARA ALUMNOS */
+.body{
+    background: linear-gradient(to top left, #da52df, #a9c448, #15cfbc);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.contaniner-alumnos{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: auto;
+    width: 950px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.contaniner-alumnos h2{
+    color: blue;
+}
+
+.contaniner-alumnos table{
+    width: 100%;
+    padding: 10px;
+    /* border: 1px solid black; */
+}
+
+.contaniner-alumnos table tr{
+    border: 1px solid black;
+}
+
+.contaniner-alumnos table tr th{
+    color: rgb(26, 11, 136);
+    font-size: 1.2rem;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.contaniner-alumnos table tr td{
+    font-size: 1.1rem;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.contaniner-alumnos table tr .operaciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contaniner-alumnos table tr .operaciones a button{
+    padding: 6px;
+}
+
+.contaniner-alumnos table tr .operaciones a button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.contaniner-alumnos table tr .operaciones a .button1{
+    background: rgb(10, 147, 185);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.contaniner-alumnos table tr .operaciones a .button2{
+    background: rgb(212, 56, 32);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.contaniner-alumnos .btn_registro{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.contaniner-alumnos .btn_registro:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+
+
+/* STYLE PARA LA SECCION DE REGISTRO */
+.contaniner-alumno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contaniner-alumno form{
+    display: flex;  
+    justify-content: center;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: 420px;
+    width: 550px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contaniner-alumno form .datos-alumnos{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.contaniner-alumno form h2{
+    color: blue;
+    text-align: center;
+}
+
+.contaniner-alumno form .datos-alumnos label{
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contaniner-alumno form .datos-alumnos input{
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+    background: transparent;
+}
+
+.contaniner-alumno form .datos-alumnos select{
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+    background: transparent;
+
+}
+
+.contaniner-alumno form .registrar{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 5px;
+}
+
+.contaniner-alumno form .registrar:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+
+}
+
+.btn_cancelar{
+    background: #3b9ccd;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.btn_cancelar:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+
+
+
+
+
+
+
+/* STYLE PARA LAS CARRERAS */
+.container-carreras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-carreras h1{
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
+
+.container-carreras h2{
+    color: rgb(38, 0, 255);
+    text-align: center;
+}
+
+.container-carreras form{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: 300px;
+    width: 700px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.container-carreras form .datos-carrera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container-carreras form .datos-carrera label{
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+    
+}
+
+.container-carreras form .datos-carrera input{
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+    background: transparent;
+
+}
+
+.container-carreras form .registrar{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 5px;
+
+}
+
+.container-carreras form .registrar:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+
+/* STYLE PARA EL REGISTRO DE LAS CARRERAS */
+h1{
+    color: red;
+}
+.container-carrera{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: auto;
+    width: 850px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.container-carrera table{
+    width: 100%;
+    padding: 10px;
+}
+
+.container-carrera table tr th{
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    padding: 5px;
+    color: blue;
+}
+
+.container-carrera table tr td{
+    font-size: 1.1rem;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.container-carrera table tr .operaciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.container-carrera table tr .operaciones a button{
+    padding: 6px;
+}
+
+.container-carrera table tr .operaciones a button:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+
+}
+
+.container-carrera table tr .operaciones a .button1{
+    background: rgb(10, 147, 185);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.container-carrera table tr .operaciones a .button2{
+    background: rgb(212, 56, 32);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.container-carrera .btn_registro{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.container-carrera .btn_registro:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
