@@ -29,13 +29,8 @@
             for ($i = 1; $i <= $filas; $i++) {
                 echo "<tr>";
                 for ($j = 1; $j <= $columnas; $j++) {
-                    
-                    $numeroCelda = ($i - 1) * $columnas + $j;
 
-                    // para lo clores 
-                    // $color = ($numeroCelda % 2 == 0) ? "white" : "blue";
-                    $color = ($numeroCelda % 2 == 0) ? "white" : $colores;
-
+                    $color = ($i + $j) % 2 == 0 ? $colores : "white";
                     echo "<td style='background-color: $color;'></td>";
                 }
                 echo "</tr>";
@@ -43,11 +38,9 @@
             echo "</table>";
         }
 
-
         imprimirTableroDamas($filas, $columna, $color);
 
         ?>
-
     </div>
 </body>
 
