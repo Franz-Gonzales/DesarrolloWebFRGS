@@ -15,14 +15,15 @@
     <form action="eliminar.php" method="post">
         <?php
         echo "<h2>El numero mayor introducido es: $mayor</h2>";
-        for ($i = 0; $i < $numero; $i++) { ?>
-            <div>
-                <label for="">Introducir número <?php echo " " . $i + 1 ?></label>
-            </div>
-            <input type="number" name="numeros[]">
-        <?php }
 
-        ?>
+        for ($i = 0; $i < $numero; $i++) { ?>
+
+            <label for="">Introducir número <?php echo " " . $i + 1 ?></label>
+
+            <input type="number" name="numeros[]">
+
+        <?php } ?>
+        
         <br>
         <input type="hidden" name="mayor" value="<?php echo $mayor ?>">
         <input type="submit" value="llenar">

@@ -7,8 +7,9 @@
     <title>Dibujar tablero</title>
     <style>
         td{
-            width: 50px;
-            height: 30px;
+            width: 70px;
+            height: 40px;
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -18,10 +19,11 @@
     <div class="container">
         <?php
 
-            $filas = $_GET["fila"];
-            $columna = $_GET['columna'];
+        $filas = $_GET["fila"];
+        $columna = $_GET['columna'];
+        $color = $_GET['color'];
 
-        function imprimirTableroDamas($filas, $columnas)
+        function imprimirTableroDamas($filas, $columnas, $colores)
         {
             echo "<table border='1'>";
             for ($i = 1; $i <= $filas; $i++) {
@@ -30,8 +32,9 @@
                     
                     $numeroCelda = ($i - 1) * $columnas + $j;
 
-                    // Determina el color en función del número de celda (par o impar)
-                    $color = ($numeroCelda % 2 == 0) ? "white" : "blue";
+                    // para lo clores 
+                    // $color = ($numeroCelda % 2 == 0) ? "white" : "blue";
+                    $color = ($numeroCelda % 2 == 0) ? "white" : $colores;
 
                     echo "<td style='background-color: $color;'></td>";
                 }
@@ -41,7 +44,8 @@
         }
 
 
-        imprimirTableroDamas($filas, $columna);
+        imprimirTableroDamas($filas, $columna, $color);
+
         ?>
 
     </div>
