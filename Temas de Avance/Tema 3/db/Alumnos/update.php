@@ -1,4 +1,6 @@
 <?php
+    include('verificar.php');
+    include('permisos.php');
     include('../db.php');
 
     if(isset($_POST['id'])){

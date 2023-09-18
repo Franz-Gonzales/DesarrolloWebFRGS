@@ -1,3 +1,7 @@
+<?php
+include('verificar.php');
+include('permisos.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -18,8 +22,13 @@
 
     <h1>FACULTAD DE TECNOLOGIA</h1>
     <div class="contaniner-alumno">
-        <form action="create.php" method="post">
-        <h2>Formulario para registrar Alumnos</h2>
+        <!-- PARA AGREGAR UNA FOTO SE REQUIERE EL ATRIBUTO enctype -->
+        <form action="create.php" method="post" enctype="multipart/form-data">
+            <h2>Formulario para registrar Alumnos</h2>
+            <div class="datos-alumnos">
+                <label for="fotografia">Fotografía</label>
+                <input type="file" name="fotografia" id="fotografia">
+            </div>
             <div class="datos-alumnos">
                 <label for="nombre">Introduce el nombre:</label>
                 <input type="text" name="nombre" placeholder="Nombre">

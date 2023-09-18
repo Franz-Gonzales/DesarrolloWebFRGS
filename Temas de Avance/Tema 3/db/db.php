@@ -7,7 +7,7 @@
 
     try{
         $connect = new mysqli($server, $user, $password, $dataBase);
-        echo "Conexión existosa";
+        // echo "Conexión existosa";
     } catch (PDOException $Error){
         echo "Error en la conexión" . $Error->getMessage();
     }
