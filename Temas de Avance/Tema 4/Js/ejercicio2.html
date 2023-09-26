@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Realzar un programa en javascript que permita calcular el factorial de un numero introducido mediante promps, utilizar funciones
+        
+        var numero = parseInt(prompt("Introducir un numero"))
+
+        function factorial(num){
+            var factorial = 1;
+            for(var i = 1; i <= num; i++){
+                factorial = factorial * i;
+            }
+            return factorial;
+        }
+        alert("El factorial del número introducido es: " + factorial(numero));
+    </script>
+</body>
+</html>
