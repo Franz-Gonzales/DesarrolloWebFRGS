@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Hacer un programa en PHP que reciba mediante un formulario por GET dos números , 
+    realice escriba el resultado de la suma de dos variables y lo imprima en una tabla con 
+    borde ej: para 2 y 3, con fondo verde -->
+    <h2>Calculo de la suma de dos números</h2>
+    <form action="mostrarSuma.php" method="get">
+      <div>
+        <label for="num1">Introduce el numero 1:</label>
+        <input type="number" name="num1" id="num1">
+      </div>
+      <div>
+        <label for="num2">Introduce el numero 2:</label>
+        <input type="number" name="num2" id="num2">
+      </div>
+      <input type="submit" value="Mostrar Suma">
+    </form>
+  </body>
+</html>
