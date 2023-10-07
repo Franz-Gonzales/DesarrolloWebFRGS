@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var cadena = prompt("Intruduce una cadena");
+      var cadena = "Hola Mundo";
+
+      // FUNCIONES DE JAVASCRIPT
+      document.write(cadena);
+      document.write("<br>");
+
+      //para obtener la longitud de la cadena
+      document.write("La longitud de la cadena es: " + cadena.length + "<br>");
+
+      //para identificar un caracter desde una posicion 'i' de la cadena
+      document.write("El segundo caracter de la cadena es: " + cadena.charAt(1) + "<br>");
+
+      //para identificar los n caracteres desde la posicion i
+      document.write("Los primeros 3 caracteres son: " + cadena.substring(0, 3) + "<br>");
+
+      //para verificar si una cadena contiene a una cadena introducida
+      if (cadena.indexOf("hola") != -1) {
+        document.write("La cadena contiene la cadena hola" + "<br>");
+      } else {
+        document.write("La cadena no tiene la cadena hola" + "<br>");
+      }
+
+      //para convertir una cadena en mayusculas
+      document.write('La cadena convertidad en mayúsculas es: '+cadena.toUpperCase()+'<br>');
+
+      //para convertir una cadena en minusculas
+      document.write('La cadena convertidad en minusculas es: '+cadena.toLowerCase()+'<br>');
+
+      // para concatenar una cadena y aumentar otra cadena
+      document.write('Resultado es: '+cadena.concat(' ', 'maravillosa' + '<br>'));
+
+      // para verificar si la cadena empieza con una letra o palabra introducidad, devuelva true o false
+      document.write('La respuesta si la cadena empieza con la letra: ' + cadena.startsWith('H') + '<br>');
+
+      // para verificar si cadena termina con el caracter o letra introducido, devuelve true o false 
+      document.write('La respuesta si cadena termina con la letra es: ' + cadena.endsWith('o')+ '<br>');
+
+      // para verificar si una caracter o letra existe en la cadena, devuelve true o false
+      document.write('Resultado si la letra existe o no en la cadena es: '+cadena.includes('x')+'<br>');
+
+      //para indentificar en que posicion se encuentra el caracter introducido dentro de la cadena
+      document.write('El caracter introducido se encuentra en la posicion: '+cadena.indexOf('o')+'<br>');
+
+      // Para verificar la posicion de la ultima aparicion del caracter o palabra dentro de la cadena
+      document.write('La ultima aparicion del caracter introducido en la cadena es en la posición: '+cadena.lastIndexOf('o')+'<br>');
+
+      // Una expresion regular para buscar caracteres mayúsculas en la cadena
+      document.write("La letras mayúsculas que se encuentran en la cadena son: "+cadena.match(/[A-Z]/g)+'<br>');
+      
+      //para rellenar una cadena al principio con un cierto carácter hasta que alcance la longitud deseada
+      document.write('La cadena rellenada con la longitud deseada es: '+cadena.padStart(11, '?')+'<br>');
+
+      document.write('La cadena rellenada con la longitud deseada es: '+cadena.padEnd(11, '?')+'<br>');
+
+      //para repetir n veces la cadena 
+      document.write('La cadena se repite 3 veces: ' + cadena.repeat(3)+'<br>')
+
+      //para remplazar una cadena por otra
+      document.write('El resultado de la cadena remplazado es: '+cadena.replace('Mundo', 'Cómo estas')+'<br>');
+
+      //para buscar desde que posicion empieza la letra o palabra introducida dentro de una cadena
+      document.write('La letra u empieza desde la posicion: '+cadena.search('un')+'<br>');
+
+      // para obtener una subcadena desde una posicion i hasta una posicion j, sin incluir el caracter del indice fin
+      document.write('La subcadena desde posicion i hasta la posicion j es: '+cadena.slice(2, 6)+'<br>');
+
+      // para separar una cadena en un array en subcadendas segun el separador de referencia
+      document.write('La cadena separado por el "" por caracter individual es: '+cadena.split('')+'<br>');
+
+      // para devolver una subcadena desde la posicion i hasta la posicion j de la cadena sin incluir el ultimo indice
+      document.write('La subcadena desde la posicion i hasta j es: '+cadena.substring(2, 7)+'<br>');
+
+
+      var cadena3 = "  Hello world  ";
+
+      //para quitar los espacion es blanco de la cadena
+      document.write('La cadena resultante sin espacios es: '+cadena3.trim()+'<br>');
+
+      //para quitar los espacios en blanco solo de la parte inicial
+      document.write('La cadena resultante sin espacios en la parte inicial es: '+cadena3.trimStart()+'<br>');
+
+      //para quitar los espacios en blanco solo de la parte final
+      document.write('La cadena resultante sin espacios en la parte final es: '+cadena3.trimEnd()+'<br>');
+
+
+
+
+
+
+
+
+
+      // EXPRESIONES REGULARES
+      document.write('<h2>Expresiones regulares</h2>');
+
+      var cadena1 = "Franz Reinaldo, el tiene 21 yeras, su idolo CR7 gana 7000$ cada minuto jasja";
+      
+      var cadena2 = "Franz Reinaldo, el tiene 21 yeras, su idolo es CR7 que es un Fútbolista que  fué el dorsal 7 del Real Madrid, He gana millones de $7000 en su trabajo futbolístico, es una leyenda del Madrid. Y tiene entre 500 - 600 millones de seguidores en instagram.";
+
+      document.write("Ejemplo con las cadenas:<br>")
+      document.write('Cadena 1 = '+cadena1 + "<br>");
+
+      // Para devolver todas las letras mayúculas de la cadena
+      document.write("Las letras mayúsculas que se encuentran en la cadena son: "+cadena1.match(/[A-Z]/g)+'<br>');
+
+      //para buscar todos los números de la cadena
+      document.write("Los números que se encuentran en la cadena son: "+cadena1.match(/\d+/g)+'<br>');
+
+      // Buscar todas las palabras que comienzan con "c" o "C":
+      document.write("Las palabras que comienzan con la letra C son: "+cadena1.match(/\b[Cc]\w*/g)+'<br>');
+
+      // Buscar todas las palabras que terminan con "as":
+      document.write("Las palabras que terminan con la letra as son: "+cadena1.match(/\b\w*as\b/g)+'<br><br>');
+
+
+
+      document.write('Cadena 2 = '+cadena2 + "<br>");
+
+      // Buscar todas las palabras que contienen la letra "e":
+      document.write("Las palabras que contienen la letra e son: "+cadena2.match(/\b\w*e\w*\b/g)+'<br>');
+
+      // Buscar todas las apariciones de "millones" o "millón":
+      document.write('Apariciones de millones en la cadena :'+cadena2.match(/\bmillones?\b/g)+'<br>')
+
+      // Buscar todas las menciones de dinero (expresadas en $)
+      document.write('Menciones de dinero $ en la cadena :'+cadena2.match(/\$\s?\d+/g)+'<br>')
+
+      // Buscar todas las palabras que comienzan con "F" o "f" y terminan con "o":
+      document.write('Las palabras que comienzan con la letra F o f y terminan con la letra o son: '+cadena2.match(/\b[Ff]\w*o\b/g)+'<br>');
+
+      // Buscar todas las palabras que contienen números:
+      document.write('Las palabras que contienen números son: '+cadena2.match(/\b\w*[0-9]\w*\b/g)+'<br>');
+      document.write('Las palabras que contienen números son: '+cadena2.match(/\b\d+\b/g)+'<br>');
+
+      // Buscar todas las menciones de "CR7":
+      document.write('Las menciones de CR7 son: '+cadena2.match(/\bCR7\b/g)+'<br>');
+
+      // Buscar todas las palabras que contienen al menos una vocal seguida de una "r":
+      document.write('Las palabras que contienen al menos una vocal seguida de una r son: '+cadena2.match(/\b\w*[aeiou]r\w*\b/g)+'<br>');
+    </script>
+  </body>
+</html>

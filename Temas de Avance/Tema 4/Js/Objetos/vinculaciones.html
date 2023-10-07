@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function coche(marca, modelo, color, precio) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.precio = precio;
+        this.mostrar = MostrarCoche;
+      }
+
+      function MostrarCoche() {
+        document.write(
+          "El auto marca: " + this.marca + " y modelo: " + this.modelo + "<br>"
+        );
+      }
+
+      var coche1 = new coche("Renault", "Clio", "Azul", "10000");
+      coche1.mostrar();
+
+
+
+
+      // Prototype
+      function facultad(carrera, aulas, telefono, direccion) {
+        this.carrera = carrera;
+        this.aulas = aulas;
+        this.telefono = telefono;
+        this.direccion = direccion;
+      }
+
+      facultad.prototype.datos = function () {
+        document.write(
+          "Los datos son: Carrera: " +
+            this.carrera +
+            " Direccion: " +
+            this.direccion
+        );
+      };
+
+      var facultad1 = new facultad("Ing. Sistemas", 60, 43523, "Calle españa");
+      facultad1.datos();
+    </script>
+  </body>
+</html>

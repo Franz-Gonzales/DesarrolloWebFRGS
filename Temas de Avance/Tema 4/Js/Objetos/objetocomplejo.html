@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var alumnos  = {
+            nombre: "Juan",
+            apellido: "Perez",
+            estado: "Reprobado",
+            materias: [
+                {nombre: 'Desarrollo Web', sigla: 'SIS256', docente: 'Carlos Montellano'},
+                {nombre: 'Redes', sigla: 'SIS252', docente: 'Gonzalo Zeballos'},
+                {nombre: 'Base de datos', sigla: 'SIS304', docente: 'Rodolfo Villafan'}
+            ],
+            carrera: [
+                {nombre: 'Ing. Sistemas', curso: '6'},
+                {nombre: 'Ing. Ciencias de la computacion', curso: '5'},
+                {nombre: 'Ing. Química', curso: '4'}
+            ]
+        };
+
+        document.write(alumnos.nombre + ' ' + alumnos.apellido + '<br>');
+
+        document.write(
+            'Nombre: '+ alumnos.nombre + '<br>'+
+            'Apellido: '+ alumnos.apellido +'<br>'+
+            'Estado: '+alumnos.estado+'<br>'+
+            'Materia: '+alumnos.materias[2].nombre+'<br>'+
+            'Docente: '+alumnos.materias[2].docente+'<br>'+
+            'Carrera: '+alumnos.carrera[0].nombre+'<br>'+
+            'Curso: '+alumnos.carrera[0].curso+'<br>'
+        );
+
+        console.log(alumnos);
+
+    </script>
+</body>
+</html>
