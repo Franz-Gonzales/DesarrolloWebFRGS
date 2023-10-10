@@ -17,4 +17,14 @@ var dias = [
   console.log('la letra en su posicio i es: ' + string.charAt(5)); 
 
   // concatenar una cadena, unir cadena
-  console.log(string.concat(' ', 'natural'))
+  console.log(string.concat(' ', 'natural'));
+
+  function fibonacci(a){
+    var b = [0, 1];
+    for (i = 2; i < a; i++){
+      b[i] = b[i - 1] + b[i - 2];
+    }
+    return b;
+  }
+
+  console.log(fibonacci(10));
