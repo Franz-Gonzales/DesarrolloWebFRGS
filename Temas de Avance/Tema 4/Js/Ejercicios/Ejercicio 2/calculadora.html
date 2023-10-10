@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!-- Corrige la referencia al archivo JavaScript -->
+    <script src="./calculadora.js" defer></script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <!-- Agrega un contenedor para mostrar los resultados -->
+    <div id="resultados"></div>
+    <script>
+        // Movemos tu código JavaScript dentro de una función para evitar posibles problemas de carga
+        function mostrarResultados() {
+            var a = parseInt(prompt("Ingresa el primer numero"));
+            var b = parseInt(prompt("Ingresa el segundo numero"));
+
+            var calculadora1 = new Calculadora(a, b);
+
+            // Cambiamos document.write por manipulación del DOM para mostrar resultados
+            document.getElementById('resultados').innerHTML += 'La suma de los números es: ' + calculadora1.sumar() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'La resta de los números es: ' + calculadora1.restar() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'La multiplicacion de los números es: ' + calculadora1.multiplicar() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'La division de los números es: ' + calculadora1.dividir() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'La potencia de los números es: ' + calculadora1.potencia() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'La raiz cuadrada de los números es: ' + calculadora1.raizCuadrada() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'La raiz cubica de los números es: ' + calculadora1.raizCubica() + '<br>'; 
+            document.getElementById('resultados').innerHTML += 'El fibonacci de los números es: ' + calculadora1.fibonacci() + '<br>';
+        }
+
+        // Llamamos a la función después de que el documento ha sido completamente cargado
+        window.onload = mostrarResultados;
+    </script>
+</body>
+</html>
