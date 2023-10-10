@@ -1,9 +1,11 @@
 let displayValue = '0';
 
+// Function update
 function updateDisplay() {
   document.getElementById('display').innerText = displayValue;
 }
 
+//! function apepen
 function appendToDisplay(value) {
   if (displayValue === '0') {
     displayValue = value;
@@ -13,11 +15,14 @@ function appendToDisplay(value) {
   updateDisplay();
 }
 
+//* function cleardisplay
 function clearDisplay() {
   displayValue = '0';
   updateDisplay();
 }
 
+
+//? function calculate result
 function calculateResult() {
   try {
     displayValue = eval(displayValue).toString();
@@ -27,3 +32,6 @@ function calculateResult() {
     updateDisplay();
   }
 }
+
+// Todo: this is todo.
+
