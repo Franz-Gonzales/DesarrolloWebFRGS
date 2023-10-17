@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Número Mayor</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container .numeros{
+        width: 250px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      input {
+        padding: 8px;
+        margin-bottom: 10px;
+        width: 250px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      input[type="number"] {
+        width: 200px;
+      }
+
+      input.red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Número Mayor</h2>
+      <div class="numeros">
+        <label for="a">Introducir el valor de a:</label>
+        <input type="number" name="a" id="a" />
+      </div>
+      <div class="numeros">
+        <label for="b">Introducir el valor de b:</label>
+        <input type="number" name="b" id="b" />
+      </div>
+      <div class="numeros">
+        <label for="c">Introducir el valor de c:</label>
+        <input type="number" name="c" id="c" />
+      </div>
+      <button id="calcular" onclick="calcularMayor()">Calcular</button>
+    </div>
+
+    <script>
+      function calcularMayor() {
+        var input = document.getElementsByTagName("input");
+
+        var a = parseInt(document.getElementById("a").value);
+        var b = parseInt(document.getElementById("b").value);
+        var c = parseInt(document.getElementById("c").value);
+
+        input[0].classList.remove("red");
+        input[1].classList.remove("red");
+        input[2].classList.remove("red");
+
+        if (a > b && a > c) {
+          input[0].classList.add("red");
+        } else if (b > a && b > c) {
+          input[1].classList.add("red");
+        } else {
+          input[2].classList.add("red");
+        }
+      }
+    </script>
+  </body>
+</html>

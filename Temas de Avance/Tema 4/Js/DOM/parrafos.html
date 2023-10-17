@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrafos</title>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas at quod unde inventore voluptatibus temporibus suscipit ipsam qui modi ullam eaque sapiente, sint earum reiciendis libero esse neque natus consequatur!</p>
+    <p>Eum similique odit assumenda pariatur ipsum provident quidem id vel voluptates blanditiis? Veritatis ea ipsa modi quisquam eum suscipit et, repellat deserunt distinctio alias sed, unde, nobis eaque iure dignissimos.</p>
+    <p>Molestiae sunt dicta quam natus, consequatur, inventore aliquam fugiat error, assumenda impedit placeat aut unde! Distinctio ipsa magnam voluptatum dolore laudantium, dicta, blanditiis quis excepturi, expedita pariatur quasi. Debitis, officia!</p>
+    <p>Minima velit sed accusantium repellat suscipit exercitationem facere blanditiis aspernatur vero molestias ipsam beatae voluptatibus qui, at aliquam aut dolores dignissimos error commodi, nesciunt impedit enim necessitatibus esse earum. Ad.</p>
+    <p>Eius culpa eos velit. Id ea adipisci quia architecto repudiandae quas dolores quasi, necessitatibus mollitia maxime doloremque recusandae? Ipsum numquam necessitatibus accusamus nulla repellendus impedit eum aut, porro amet fuga.</p>
+    <p>Mollitia in placeat, ut dolor culpa ad veniam sequi architecto qui, dicta laudantium non deserunt, quam dignissimos. Nisi, sunt illum! Repudiandae, commodi quisquam pariatur officia aliquid libero sapiente asperiores harum!</p>
+    <p>Voluptatem excepturi in dolores ullam sunt qui aliquam magnam repellendus placeat, odit debitis iusto sapiente hic nam tempora magni dicta minus! Aliquam itaque similique dignissimos laborum distinctio quo aliquid officiis.</p>
+    <p>Reiciendis doloremque saepe suscipit consequatur numquam. Autem deserunt ducimus nesciunt sed. Eius magnam sequi laborum, repudiandae ab itaque iste perferendis cupiditate accusantium voluptate omnis ipsum molestias nobis porro corporis obcaecati?</p>
+    <p>Pariatur expedita quae aperiam deleniti error, culpa quibusdam in voluptates fugit hic laborum enim nisi id necessitatibus dolores, corrupti voluptas molestias eveniet sequi dicta ea consequatur ducimus animi. Magnam, ipsa?</p>
+    <p>Beatae aspernatur deleniti sunt minima architecto repellat placeat cupiditate, quia tempore quam odio hic voluptatibus ex labore eum veniam, provident quis assumenda quisquam, aliquam laboriosam natus corporis recusandae. Nesciunt, natus.</p>
+
+    <button onclick="intercambiarColores()">Intercambiar Colores</button>
+    <button onclick="setColorRed()">Cambiar Rojo</button>
+
+    <script>
+        var parrafos = document.getElementsByTagName('p');
+
+        function intercambiarColores(){
+            for(var i = 0; i < parrafos.length; i++){
+                if(i % 2 == 0){
+                    parrafos[i].style.backgroundColor = 'red';
+                }else{
+                    parrafos[i].style.backgroundColor = 'yellow';
+                }
+            }
+        }
+
+
+        //pner la primera letra de la cadena en color rojo
+        function setColorRed(){
+            var parrafo5 = parrafos[4].innerHTML;
+            var letra = parrafo5.charAt(0).toLocaleUpperCase();
+            var resto = parrafo5.substring(1);
+
+            var nuevoparrafo = `<span style="color: red;">${letra}</span>${resto}`;
+            parrafos[4].innerHTML = nuevoparrafo;
+        }
+
+        console.log('La longitud de la cadena es: ' + parrafos.length);
+        parrafos[5].innerHTML = 'Gonzales Reinaldo';
+
+        console.log(parrafos[1].style);
+
+    </script>
+</body>
+</html>

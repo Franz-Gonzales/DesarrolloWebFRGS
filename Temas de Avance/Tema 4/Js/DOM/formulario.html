@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>Ingresar datos</h1>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" title="Enter your name">
+        </div>
+        <div>
+            <label for="sexo">Sexo:</label>
+            <input type="radio" name="sexo" id="sexo" value="Masculino">Masculino
+            <input type="radio" name="sexo" id="sexo" value="Femenino">Femenino
+        </div>
+        <input type="button" value="Enviar" onclick="mostrar()">
+    </form>
+
+    <script>
+        function mostrar(){
+            var nombre = document.getElementsByName('nombre');
+            // var sexo = document.getElementsByName('sexo');
+            // var sexoMasculino = document.getElementById('masculino').checked;
+            var sexo = document.querySelector('input[name="sexo"]:checked');
+            
+            console.log(nombre);
+            console.log(sexo);
+
+            alert('Nombre: ' + nombre[0].value);
+            // alert(sexo.value);
+
+            if(sexo){
+                alert('Sexo: ' + sexo.value);
+            }else{
+                alert('Debe seleccionar el sexo.');
+            }
+            
+            // if(sexo){
+            //     alert('Nombre: ' + nombre + '\nSexo: Masculino');
+            // } else {
+            //     alert('Nombre: ' + nombre + '\nSexo: Femenino');
+            // }
+        }
+    </script>
+</body>
+</html>

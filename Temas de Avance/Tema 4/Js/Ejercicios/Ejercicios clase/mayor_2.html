@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h3>Introduce la cantidad de inputs: </h3>
+    <label for="n">Enter a number:</label>
+    <input type="number" id="n">
+    <input onclick="llenar()" type="submit" value="Llenar">
+
+    <!-- Un div vacío donde se colocarán los inputs -->
+    <div id="div">
+
+    </div>
+</body>
+</html>
+<script>
+
+// Creamos la cantidad de inputs en función de n
+function llenar(){
+    ene = parseInt(document.getElementById("n").value);
+
+    html = "";
+    for(let i=0; i< ene; i++){
+        
+        html+= `<br> ${i+1}: <input type="number" name="numero"><span id="span${i}""></span><br>`
+    }
+
+    html+='<br><button onclick="calcularMayor()">Calcular Mayor</button>';
+    document.getElementById("div").innerHTML=html;
+}
+
+function calcularMayor(){
+
+    numeros = document.getElementsByName("numero");
+    mayor = numeros[0];
+
+    for(let i=0; i< numeros.length;i++){
+        
+        valor = parseInt(mayor.value)
+        valorComparar = parseInt(numeros[i].value);
+        if(valorComparar > valor){
+            mayor = numeros[i];
+        }
+    }
+    mayor.style.background = "#d31d1d";
+    let indice = Array.from(numeros).indexOf(mayor);
+    document.getElementById("span" + indice).textContent = " Número Mayor"
+}
+
+</script>

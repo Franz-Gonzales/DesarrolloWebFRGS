@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label for="a">Introducir el valor de a:</label>
+            <input type="number" name="a" id="a">
+        </div>
+        <div>
+            <label for="b">Introducir el valor de b:</label>
+            <input type="number" name="b" id="b">
+        </div>
+        <div>
+            <label for="c">Introducir el valor de c:</label>
+            <input type="number" name="c" id="c">
+        </div>
+        <button id="calcular" onclick="calcularMayor()">Calcular</button>
+    </div>
+
+    <script>
+        function calcularMayor(){
+            
+            var input = document.getElementsByTagName('input');
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var c = parseInt(document.getElementById('c').value);
+
+            // var a = parseInt(input[0].value);
+            // var b = parseInt(input[1].value);
+            // var c = parseInt(input[2].value);
+
+            if(a>b && a>c){
+                // document.getElementById('a').style.background = 'red';
+                input[0].style.backgroundColor = 'red';
+                input[1].style.backgroundColor = 'white';
+                input[2].style.backgroundColor = 'white';
+            }else{
+                if(b>a && b>c){
+                    // document.getElementById('b').style.background = 'red';
+                    input[0].style.backgroundColor = 'white';
+                    input[1].style.backgroundColor = 'red';
+                    input[2].style.backgroundColor = 'white';
+                }else{
+                    // document.getElementById('c').style.background = 'red';
+                    input[0].style.backgroundColor = 'white';
+                    input[1].style.backgroundColor = 'white';
+                    input[2].style.backgroundColor = 'red';
+                }
+            }
+            // var mayor = Math.max(a,b,c);
+            // document.getElementById('a').style.background = 'white';
+            // document.getElementById('b').style.background = 'white';
+            // document.getElementById('c').style.background = 'white';
+
+            // var mayor = Math.max(a,b,c);
+
+            // if(a == mayor){
+            //     // document.write(`<h2 style="background: red;">${a}</h2>
+            //     // <h2>${b}</h2>
+            //     // <h2>${c}</h2>`);
+            //     `<input type="number" name="a" id="a" style="background: red;">`;
+            // }else{
+            //     if(b == mayor){
+            //         // document.write(`<h2>${a}</h2>
+            //         // <h2 style="background: red;">${b}</h2>
+            //         // <h2>${c}</h2>`);
+            //         `<input type="number" name="b" id="b" style="background: red;">`;
+            //     }else{
+            //         // document.write(`<h2>${a}</h2>
+            //         // <h2>${b}</h2>
+            //         // <h2 style="background: red;">${c}</h2>`);
+            //         `<input type="number" name="c" id="c" style="background: red;">`;
+            //     }
+            // }
+        }
+    </script>
+</body>
+</html>

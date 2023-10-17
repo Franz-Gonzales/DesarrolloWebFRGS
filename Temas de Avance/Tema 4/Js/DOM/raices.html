@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ecuación de Segundo Grado</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                gap: 30px;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            label {
+                margin-bottom: 5px;
+                color: #333;
+            }
+
+            input {
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            input[type="button"],
+            input[type="reset"] {
+                background-color: #4caf50;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            input[type="button"]:hover,
+            input[type="reset"]:hover {
+                background-color: #45a049;
+            }
+
+            #resultado {
+                margin-top: 20px;
+                background-color: #f9f9f9;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin: 5px 0;
+                color: #333;
+            }
+
+            b {
+                color: #e44d26;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Ecuación de segundo grado</h1>
+            <form>
+                <div>
+                    <label for="a">Valor de a:</label>
+                    <input type="number" id="a" name="a" />
+                </div>
+                <div>
+                    <label for="b">Valor de b:</label>
+                    <input type="number" id="b" name="b" />
+                </div>
+                <div>
+                    <label for="c">Valor de c:</label>
+                    <input type="number" id="c" name="c" />
+                </div>
+                <input type="button" value="Calcular" onclick="calcular_raices()" />
+                <input type="reset" value="Limpiar" />
+            </form>
+        </div>
+
+        <div id="resultado"></div>
+
+        <script>
+            function calcular_raices() {
+                var resultado = document.getElementById("resultado");
+
+                const a = document.getElementById("a").value;
+                const b = document.getElementById("b").value;
+                const c = document.getElementById("c").value;
+
+                var discriminante = b ** 2 - 4 * a * c;
+                var num_i = "";
+                if (discriminante < 0) {
+                    discriminante *= -1;
+                    num_i = "i";
+                }
+                var x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+                var x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+
+                resultado.innerHTML = `<h2>Resultado</>
+                                <p>x1 = ${x1} <b>${num_i}</b></p>
+                                <p>x2 = ${x2} <b>${num_i}</b></p>`;
+            }
+        </script>
+    </body>
+</html>

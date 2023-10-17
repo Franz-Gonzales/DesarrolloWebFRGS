@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form onsubmit="event.preventDefault(); realizar_tabla();">
+            <div>
+                <label for="num_estudiantes">Número de Estudiantes:</label>
+                <input type="number" name="num_estudiantes" id="num_estudiantes" />
+            </div>
+            <input type="submit" value="Enviar"/>
+        </form>
+      
+        <!-- <div id="tabla-estudiantes">
+
+        </div> -->
+
+        <script>
+            function realizar_tabla() {
+
+                var numero_estudiantes = parseInt(document.getElementById("num_estudiantes").value);
+                // document.write(numero_estudiantes);
+                // var numero_estudiantes = parseInt(prompt('Introduce número de estudiantes: ')); 
+
+                var estudiantes = [];
+
+                for (var i = 1; i <= numero_estudiantes; i++) {
+                    var apellido_nombre = prompt("Introduce Apellido_Nombre del estudiante " + i);
+
+                    var edad = parseInt(prompt("Ingresa la edad del estudiante " + i));
+
+                    var calificaciones = [];
+
+                    var cantidad_calificaciones = parseInt(prompt('Ingrese la cantidad de calificaciones ' + apellido_nombre));
+
+                    for (var j = 1; j <= cantidad_calificaciones; j++) {
+                        // var calificacion = {};
+                        var materia = prompt("Nombre de la materia " + j + " del estudiante " + apellido_nombre);
+                        var nota = parseInt(prompt("La nota " + j + " del estudiante " + apellido_nombre));
+                        // estudiante.calificaciones.push(calificacion);
+
+                        calificaciones.push({
+                            materia: materia,
+                            nota: nota,
+                        });
+                    }
+                  
+                    estudiantes.push({
+                        apellido_nombre:apellido_nombre, 
+                        edad: edad,
+                        calificaciones:calificaciones,
+                    });
+            
+                }
+                console.log(estudiantes);
+                // document.write(estudiantes.length);
+
+                var html = `
+                
+                <table border="1"> 
+                    <thead>
+                        <tr>
+                            <th>Nro</th>
+                            <th>Apellido_Nombre</th>
+                            <th>Edad</th>
+                            <th>Materias</th>
+                            <th>Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                        var cont = 1;
+                        estudiantes.forEach(estudiante => {
+                            html += `<tr>
+                                <td>${cont++}</td>
+                                <td>${estudiante.apellido_nombre}</td>
+                                <td>${estudiante.edad}</td>
+                                <td>${estudiante.calificaciones.map(calificacion => calificacion.materia).join(', ')}</td>
+                                <td>${estudiante.calificaciones.map(calificacion => calificacion.nota).join(', ')}</td>
+                                </tr>`
+                        });
+                    html += `</tbody>
+                </table>`;
+                // tabla_estudiantes.innerHTML = html;
+                document.write(html);
+            }
+            // realizar_tabla();
+        </script>
+    </body>
+</html>
