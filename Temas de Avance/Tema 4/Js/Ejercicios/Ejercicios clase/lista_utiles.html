@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Utiles</title>
+</head>
+<body>
+    <div class="container">
+        <label for="utiles">Introduce lista de utiles:</label>
+        <input type="text" id="utiles">
+        <br>
+        <button id="agregar">Añadir</button>
+        <button id="borrar">borrar</button>
+    </div>
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+        document.getElementById('agregar').addEventListener('onclick', ()=>{
+
+            var utiles = document.createElement('li');
+
+            utiles.innerHTML = document.getElementById('utiles').value;
+
+            document.getElementById('lista').oppendChild(utiles);
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            width: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <input type="button" id="btn_mostrar" value="Mostrar" onclick="mostrar()">
+    </div>
+
+    <br>
+    <table>
+        <tr>
+            <td onclick="agregarNumeros(1)">1</td>
+            <td onclick="agregarNumeros(2)">2</td>
+            <td onclick="agregarNumeros(3)">3</td>
+        </tr>
+        <tr>
+            <td onclick="agregarNumeros(4)">4</td>
+            <td onclick="agregarNumeros(5)">5</td>
+            <td onclick="agregarNumeros(6)">6</td>
+        </tr>
+        <tr>
+            <td onclick="agregarNumeros(7)">7</td>
+            <td onclick="agregarNumeros(8)">8</td>
+            <td onclick="agregarNumeros(9)">9</td>
+        </tr>
+        <tr>
+            <td onclick="borrar()">DEL</td>
+            <td onclick="agregarNumeros(0)">0</td>
+            <td><button id="btn_limpiar" onclick="limpiar()">borrar</button></td>
+        </tr>
+    </table>
+
+
+    <script>
+        // document.getElementById('btn_limpiar').addEventListener('onclick', function(){}
+
+        function limpiar(){
+            document.getElementById('password').value = "";
+        }
+
+        function mostrar(){
+            var password = document.getElementById('password');
+            var btn_mostrar = document.getElementById('btn_mostrar')
+            // password.type = "Text";
+
+            if(password.type == "password"){
+                password.type = "Text";
+                btn_mostrar.value = "Ocultar";
+            }else{
+                password.type = "password";
+                btn_mostrar.value = "Mostrar";
+            }
+            
+        }
+
+        function agregarNumeros(numero){
+            var password = document.getElementById('password');
+            // var numeros = document.getElementById(numero).value;
+            password.value += numero;
+        }
+
+        function borrar(){
+            var password = document.getElementById('password').value;
+            // console.log(password);
+            
+            var ultimo_posicion = password.length;
+
+            // console.log(ultimo_posicion);
+
+            var delete_password = password.slice(0, ultimo_posicion - 1);
+            document.getElementById('password').value = delete_password;
+        }
+    </script>
+</body>
+</html>

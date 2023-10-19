@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="borde-derecho">&nbsp;</td>
+            <td class="borde-derecho">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="borde-derecho borde-superior">&nbsp;</td>
+            <td class="borde-derecho borde-superior">&nbsp;</td>
+            <td class="borde-derecho">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="borde-derecho borde-superior">&nbsp;</td>
+            <td class="borde-derecho borde-superior">&nbsp;</td>
+            <td class="borde-derecho">&nbsp;</td>
+        </tr>
+    </table>
+
+    <script>
+        var turno ='X';
+        function cambiarturno(){
+            if(turno ='X'){
+                turno ='O';
+            }
+            else{
+                turno ='X';
+            }
+        }
+        function marcar(casilla){
+            console.log(document.getElementById(casilla).innerHTML);
+            document.getElementById('mensaje').innerHTML='';
+            if(document.getElementById(casilla).innerHTML ){
+
+            }
+            cambiarturno
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    .borde-derecho{
+        border-right:1px solid black ;
+    }
+    .borde-superior {
+        border-top: 1px solid black;
+    }
+
+   
+</style>

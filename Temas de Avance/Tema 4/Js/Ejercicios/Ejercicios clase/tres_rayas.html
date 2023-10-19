@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="tabla" class="container">
+
+    </div>
+    <script>
+        let html = "<table>";
+        let contador = 0;
+        let turno = 1;
+        var estado = [];
+        for (var i = 0; i < 3; i++) {
+
+            html += "<tr>";
+
+            for (var j = 0; j < 3; j++) {
+
+                estado[contador] = "desocupado";
+                contador += 1;
+                html += `<td class="posicion${contador}" id="c${contador}" onclick="cambiar(${contador})"></td>`;
+
+            }
+            html += `</tr>`;
+        }
+        document.getElementById("tabla").innerHTML = html + `</table>`;
+
+
+
+
+        function cambiar(posicion) {
+
+            if (turno == 1) {
+
+                if (estado[posicion - 1] == "desocupado") {
+
+                    estado[posicion - 1] = "ocupado";
+                    document.getElementById("c" + posicion).innerHTML = "X";
+                    turno = 0;
+
+                    console.log(estado);
+                    console.log(turno);
+
+                } else if (estado[posicion - 1] == "ocupado") {
+
+                    alert("Esta posicion ya esta ocupada");
+                }
+
+            } else if (turno == 0) {
+
+                if (estado[posicion - 1] == "desocupado") {
+
+                    estado[posicion - 1] = "ocupado";
+                    document.getElementById("c" + posicion).innerHTML = "O";
+
+                    turno = 1;
+
+                    console.log(estado);
+                    console.log(turno);
+
+                } else if (estado[posicion - 1] == "ocupado") {
+
+                    alert("Esta posicion ya esta ocupada");
+
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

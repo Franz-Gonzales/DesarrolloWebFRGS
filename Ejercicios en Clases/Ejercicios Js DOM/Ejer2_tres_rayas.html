@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego X y O tres rayas</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table{
+            width: 200px;
+            height: 200px;
+        }
+
+        td{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 1.3rem;
+            background: #c3e7e8;
+        }
+
+        .border-left{
+            border-left: 2px solid black;
+        }
+
+        .border-top{
+            border-top: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Juego de Tres Rayas</h2>
+    <table>
+        <tr>
+            <td id="1" onclick="marcar('1')">&nbsp;</td>
+            <td id="2" class="border-left" onclick="marcar('2')">&nbsp;</td>
+            <td id="3" class="border-left" onclick="marcar('3')">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="4" class="border-top" onclick="marcar('4')">&nbsp;</td>
+            <td id="5" class="border-top border-left" onclick="marcar('5')">&nbsp;</td>
+            <td id="6" class="border-top border-left" onclick="marcar('6')"> &nbsp;</td>
+        </tr>
+        <tr>
+            <td id="7" class="border-top" onclick="marcar('7')">&nbsp;</td>
+            <td id="8" class="border-top border-left" onclick="marcar('8')">&nbsp;</td>
+            <td id="9" class="border-top border-left" onclick="marcar('9')">&nbsp;</td>
+        </tr>
+    </table>
+
+    <div id="messaje">
+
+    </div>
+
+    <script>
+        var turno ='X';
+        function cambiarturno(){
+            if(turno == 'X'){
+                turno = 'O';
+            }
+            else{
+                turno = 'X';
+            }
+        }
+        function marcar(casilla){
+
+            // console.log(turno);
+            var casillaActual = document.getElementById(casilla);
+            
+            // console.log(casillaActual.innerHTML);
+
+            document.getElementById('messaje').innerHTML = '';
+
+            if(casillaActual.innerHTML){
+                casillaActual.innerHTML = turno;
+                // console.log(casillaActual.innerHTML);
+            }else{
+                document.getElementById('messaje').innerHTML = 'Este cuadro ya estaba marcado';
+            }
+
+            cambiarturno();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="number" id="num_A" title="Number A"><br>
+  <input type="number" id="num_B" title="Number B"><br>
+  <input type="number" id="num_C" title="Number C"><br>
+  <button id="calcularMayor" onclick="calcularMayor()">Calcular el Mayor</button>
+  <div id="resultado"></div>
+
+    <script>
+        function calcularMayor(){
+       
+         let num_A = document.getElementById('num_A');
+         let num_B = document.getElementById('num_B');
+         let num_C = document.getElementById('num_C');
+
+         let mayor = num_A;
+    
+         if (parseFloat(num_B.value)> parseFloat (mayor.value)) {
+           mayor = num_B;
+         }
+
+         if (parseFloat(num_C.value) > parseFloat (mayor.value)) {
+           mayor = num_C;
+         }
+
+         num_A.style.backgroundColor = 'white';
+         num_B.style.backgroundColor = 'white';
+         num_C.style.backgroundColor = 'white';
+
+         mayor.style.backgroundColor ='red';
+
+         console.log(mayor)
+       
+       
+        };  
+    
+    </script>
+</body>
+</html>

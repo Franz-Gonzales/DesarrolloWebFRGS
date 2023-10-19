@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista compras</title>
+</head>
+<body>
+    <div class="lista-compras">
+        <label for="elemento">Introduce un elemento a la lista: </label>
+        <input type="text" name="elemento" id="elemento">
+        <br>
+        <button onclick="agrergarElementoLista();">Añadir</button>
+        
+    </div>
+
+    <div class="elementos" id="lista-elementos">
+
+    </div>
+
+
+    <script>
+        var elementos = [];
+        
+        function agrergarElementoLista(){
+ 
+            var elemento = document.getElementById('elemento').value;
+            var lista = document.getElementById('lista-elementos');
+
+            // var text = document.getElementById('text');
+            
+            elementos.push(elemento);
+            // document.write('<p>'+elemento+'</p>');
+             var lista_producto = '';
+             var producto = '';
+            // elemento.innerHTML = '';
+            elementos.forEach(elem =>{
+                
+                // document.write('<p>' + elem + '</p>');
+                // lista_compra = '<p id="idelemento">' + elem + '</p>';
+                // producto = `<p>${elem}</p>`;
+                producto = `${elem.toString()}<br>`;
+                // lista_producto = `<p>${producto}</p>`;
+                // if(producto.includes('de')){
+                //     producto = `<p style="background: yellow; ">${elem}</p>`;
+                //     lista_producto = producto;
+                // }
+
+                var producto_id = '';
+                if(producto.includes('de')){
+                    producto_id = `<mark>${producto}</mark>`;
+                    producto = producto_id;
+                }
+                
+                // if(elem.toString())
+            });
+            
+
+            lista.innerHTML += producto;
+        }
+        console.log(elementos);
+        
+        // console.log('La longitud es: ' + elementos.length);
+
+            // console.log('longitud: '+ elementos.length);
+
+    </script>
+</body>
+</html>

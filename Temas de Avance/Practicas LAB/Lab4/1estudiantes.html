@@ -28,8 +28,9 @@
                 var estudiantes = [];
 
                 for (var i = 1; i <= numero_estudiantes; i++) {
-                    var apellido_nombre = prompt("Introduce Apellido_Nombre del estudiante " + i);
 
+                    var nro = i;
+                    var apellido_nombre = prompt("Introduce Apellido_Nombre del estudiante " + i);
                     var edad = parseInt(prompt("Ingresa la edad del estudiante " + i));
 
                     var calificaciones = [];
@@ -49,6 +50,7 @@
                     }
                   
                     estudiantes.push({
+                        nro: nro,
                         apellido_nombre:apellido_nombre, 
                         edad: edad,
                         calificaciones:calificaciones,
@@ -71,10 +73,10 @@
                         </tr>
                     </thead>
                     <tbody>`;
-                        var cont = 1;
+                        // var cont = 1;
                         estudiantes.forEach(estudiante => {
-                            html += `<tr>
-                                <td>${cont++}</td>
+                            html += `<tr id="${estudiante.nro}">
+                                <td>${estudiante.nro}</td>
                                 <td>${estudiante.apellido_nombre}</td>
                                 <td>${estudiante.edad}</td>
                                 <td>${estudiante.calificaciones.map(calificacion => calificacion.materia).join(', ')}</td>
@@ -82,9 +84,29 @@
                                 </tr>`
                         });
                     html += `</tbody>
-                </table>`;
+                </table>
+                <button onclick=""encontrarMejorEstudiante();>Mejor estudiante</button>`;
                 // tabla_estudiantes.innerHTML = html;
                 document.write(html);
+                
+
+                function encontrarMejorEstudiante(){
+                    // var id_nro = document.getElementById()
+                    // console.log(estudiantes);
+                    var id_nro = 0;
+                    var notaMayor = 0;
+                    estudiantes.forEach(estudiante =>{
+
+                        estudiante.calificaciones.forEach(calif =>{
+                            
+                            if(parseInt(calif.nota) > notaMayor){
+                                notaMayor = parseInt(calif.nota);
+                                id_nro = parseInt(estudiante.nro);
+                            }
+                        })
+                    })
+                    document.getElementById(id_nro).style.backgroundColor = 'green';
+                }
             }
             // realizar_tabla();
         </script>
