@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+
+.container{
+    display: flex;
+    padding: 20px;
+}
+
+.container ul{
+    list-style: none;
+}
+
+.container ul li{
+    border: 1px solid black;
+}
+
+.container ul li a{
+    text-decoration: none;
+}

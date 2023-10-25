@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <label for="calendario"> Seleccionar mes</label>
+        <select name="calendario" id="calendario" target>
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+        </select>
+    </div>
+
+
+    <table id="tabla-calendario"></table>
+
+
+    <script>
+        const mes_selector = document.getElementById("calendario");
+
+        // var mes = document.getElementsByTagName("option");
+        
+        mes_selector.addEventListener("change", function(event){
+            const calendario = getElementById("tabla-calendario");
+
+            calendario.innerHTML = "";
+        })
+        
+        // console.log(mes);
+        
+        // for(let i = 1;  i<  mes.length; i++){
+            const mess = parseInt(event.target.value, 10);
+        // }
+            
+
+            console.log(mess);
+            console.log("jsdosjpds");
+        // if(mes.innerHTML)
+
+        // console.log(calendario);
+    </script>
+</body>
+</html>
