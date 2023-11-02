@@ -1,21 +1,18 @@
-<?php
-include('verificar.php');
-include('permisos.php');
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Form alumnos</title>
+    <script src="ajax.js"></script>
 </head>
 
 <body class="body">
-    <?php include("../db.php");
+    <?php include("bd.php");
 
-    $sql = "SELECT id_carrera, nombre, facultad FROM carreras";
+    $sql = "SELECT id, nombre FROM carrera";
     $result = $connect->query($sql);
 
     ?>
@@ -23,30 +20,30 @@ include('permisos.php');
     <h1>FACULTAD DE TECNOLOGIA</h1>
     <div class="contaniner-alumno">
         <!-- PARA AGREGAR UNA FOTO SE REQUIERE EL ATRIBUTO enctype -->
-        <form action="create.php" method="post" enctype="multipart/form-data">
+        <form action="javascript:registrarAlumno()" method="POST" enctype="multipart/form-data" id="form-registro">
             <h2>Formulario para registrar Alumnos</h2>
             <div class="datos-alumnos">
                 <label for="fotografia">Fotografía</label>
                 <input type="file" name="fotografia" id="fotografia">
             </div>
             <div class="datos-alumnos">
-                <label for="nombre">Introduce el nombre:</label>
-                <input type="text" name="nombre" placeholder="Nombre">
+                <label for="nombres">Introduce el nombre:</label>
+                <input type="text" name="nombres" placeholder="Nombre">
             </div>
             <div class="datos-alumnos">
-                <label for="apellido">Introduce el apellido:</label>
-                <input type="text" name="apellido" placeholder="Apellido">
+                <label for="apellidos">Introduce el apellido:</label>
+                <input type="text" name="apellidos" placeholder="Apellido">
             </div>
             <div class="datos-alumnos">
                 <label for="CU">Introduce C.U.:</label>
                 <input type="text" name="CU" placeholder="C.U.">
             </div>
             <div class="datos-alumnos">
-                <label for="id_carrera">Carrera: </label>
-                <select name="id_carrera" id="id_carrera">
+                <label for="idcarrera">Carrera: </label>
+                <select name="idcarrera" id="idcarrera">
                     <?php
                     while ($row = $result->fetch_assoc()) { ?>
-                        <option value="<?php echo $row["id_carrera"]; ?>"><?php echo $row["nombre"]; ?></option>
+                        <option value="<?php echo $row["id"]; ?>"><?php echo $row["nombre"]; ?></option>
                     <?php } ?>
 
                 </select>
@@ -54,8 +51,8 @@ include('permisos.php');
 
             <input type="submit" value="Registrar" class="registrar">
         </form>
+        <a href="javascript:cargarContenido('read.php')"><button class="btn_cancelar">Cancelar Registro</button></a>
     </div>
-    <a href="read.php"><button class="btn_cancelar">Cancelar Registro</button></a>
 
 </body>
 

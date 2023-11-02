@@ -1,6 +1,6 @@
 <?php
-include('verificar.php');
-include('permisos.php');
+// include('verificar.php');
+// include('permisos.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,17 +39,17 @@ include('permisos.php');
 
 <body class="body">
     <?php
-    include("../db.php");
+    include("bd.php");
 
     if (isset($_GET['id'])) {
 
         $id = $_GET['id'];
 
-        $sql_alumno = "SELECT fotografia, nombre, apellido, CU, id_carrera FROM alumnos WHERE id = $id";
+        $sql_alumno = "SELECT fotografia, nombres, apellidos, CU, idcarrera FROM alumno WHERE id = $id";
         $result_alumno = $connect->query($sql_alumno);
         $row = $result_alumno->fetch_assoc();
 
-        $sql_carrera = "SELECT id_carrera, nombre, facultad FROM carreras";
+        $sql_carrera = "SELECT id, nombre FROM carrera";
         $result_carrera = $connect->query($sql_carrera);
     }
 
@@ -68,23 +68,23 @@ include('permisos.php');
                 </div>
             </div>
             <div class="datos-alumnos">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" value="<?php echo $row['nombre']; ?>">
+                <label for="nombres">Nombre:</label>
+                <input type="text" name="nombres" value="<?php echo $row['nombres']; ?>">
             </div>
             <div class="datos-alumnos">
-                <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" value="<?php echo $row['apellido']; ?>">
+                <label for="apellidos">Apellido:</label>
+                <input type="text" name="apellidos" value="<?php echo $row['apellidos']; ?>">
             </div>
             <div class="datos-alumnos">
                 <label for="CU">C.U.:</label>
                 <input type="text" name="CU" value="<?php echo $row['CU']; ?>">
             </div>
             <div class="datos-alumnos">
-                <label for="id_carrera">Carrera: </label>
-                <select name="id_carrera" id="id_carrera">
+                <label for="idcarrera">Carrera: </label>
+                <select name="idcarrera" id="idcarrera">
                     <?php
                     while ($row_carrera = $result_carrera->fetch_assoc()) { ?>
-                        <option value="<?php echo $row_carrera["id_carrera"]; ?>" <?php echo $row_carrera["id_carrera"] === $row["id_carrera"] ? "selected" : ''; ?>><?php echo $row_carrera['nombre']; ?></option>
+                        <option value="<?php echo $row_carrera["id"]; ?>" <?php echo $row_carrera["id"] === $row["idcarrera"] ? "selected" : ''; ?>><?php echo $row_carrera['nombre']; ?></option>
                     <?php } ?>
 
                 </select>

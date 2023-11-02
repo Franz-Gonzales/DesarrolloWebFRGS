@@ -1,5 +1,5 @@
 <?php
-include('verificar.php');
+// include('verificar.php');
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,6 @@ include('verificar.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
     <style>
         a {
             text-decoration: none;
@@ -48,12 +47,12 @@ include('verificar.php');
     </div>
 
     <?php
-    include('../db.php');
+    include('bd.php');
 
     $ordenar = isset($_GET['ordenar']) ? $_GET['ordenar'] : 'id';
     // $ordenar = in_array($ordenar, ['nombreA', 'apellido', 'CU', 'carrera']) ? $ordenar : 'id';
 
-    $sql = "SELECT a.id, fotografia, a.nombre, apellido, CU, c.nombre AS carrera FROM alumnos a LEFT JOIN carreras c ON a.id_carrera = c.id_carrera";
+    $sql = "SELECT a.id, fotografia, a.nombres, apellidos, CU, c.nombre AS carrera FROM alumno a LEFT JOIN carrera c ON a.idcarrera = c.id";
 
     // Procedimiento para buscar alumnos
     if (isset($_GET['buscar'])) {
@@ -78,23 +77,19 @@ include('verificar.php');
                     <th><a href="read.php?ordenar=apellido" class="date">Apellidos</a></th>
                     <th><a href="read.php?ordenar=CU" class="date">C.U.</a></th>
                     <th><a href="read.php?ordenar=carrera" class="date">Carrera</a></th>
-                    <?php if ($_SESSION['rol'] == "Administrador") { ?>
-                        <th>Operaciones</th>
-                    <?php } ?>
+                    <th>Operaciones</th>
                 </tr>
                 <?php while ($row = $result->fetch_assoc()) { ?>
 
                     <tr>
-                        <td><img src="./images/<?php echo $row["fotografia"]; ?>" alt="" width="80px"></td>
-                        <td><?php echo $row["nombre"]; ?></td>
-                        <td><?php echo $row["apellido"]; ?></td>
+                        <td><img src="./images/<?php echo $row["fotografia"]; ?>" alt="" width="50px"></td>
+                        <td><?php echo $row["nombres"]; ?></td>
+                        <td><?php echo $row["apellidos"]; ?></td>
                         <td><?php echo $row["CU"]; ?></td>
                         <td><?php echo $row["carrera"]; ?></td>
                         <td class="operaciones">
-                            <?php if ($_SESSION['rol'] == 'Administrador') { ?>
-                                <a href="form_update_alumnos.php?id=<?php echo $row['id']; ?>"><button class="button1">Editar</button></a>
-                                <a href="delete.php?id=<?php echo $row['id']; ?>"><button class="button2">Eliminar</button></a>
-                            <?php } ?>
+                        <a href="form_update_alumnos.php?id=<?php echo $row['id']; ?>"><button class="button1">Editar</button></a>
+                            <a href="delete.php?id=<?php echo $row['id']; ?>"><button class="button2">Eliminar</button></a>
                         </td>
 
                     </tr>
@@ -106,10 +101,7 @@ include('verificar.php');
         ?>
             <p>No existe registros que mostrar</p>
         <?php } ?>
-        <?php if ($_SESSION['rol'] == "Administrador") { ?>
-            <a href="form_alumnos.php"><button class="btn_registro">Regitrar Alumno</button></a>
-        <?php } ?>
-        <a href="cerrar_sesion.php">Cerrar Session</a>
+        <a href=""><button class="btn_cancelar">Registrar Alumno</button></a>
 
         </div>
 </body>

@@ -1,14 +1,14 @@
+
 <?php
-include('verificar.php');
-include('permisos.php');
-include("../db.php");
+include ('bd.php');
 
-if (isset($_POST["nombre"])) {
 
-    $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
-    $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : '';
+if (isset($_POST["nombres"])) {
+
+    $nombres = (isset($_POST['nombres'])) ? $_POST['nombres'] : '';
+    $apellidos = (isset($_POST['apellidos'])) ? $_POST['apellidos'] : '';
     $CU = (isset($_POST['CU'])) ? $_POST['CU'] : '';
-    $id_carrera = (isset($_POST['id_carrera'])) ? $_POST['id_carrera'] : '';
+    $idcarrera = (isset($_POST['idcarrera'])) ? $_POST['idcarrera'] : '';
 
     // Procedimineto para la fotografia
     $archivo_original = (isset($_FILES['fotografia']['name'])) ? $_FILES['fotografia']['name'] : '';
@@ -19,7 +19,7 @@ if (isset($_POST["nombre"])) {
     // move_uploaded_file($_FILES['fotografia']['tmp_name'], '../img/' . $fotografia);
     copy($_FILES['fotografia']['tmp_name'], './images/' . $fotografia);
 
-    $sql = "INSERT INTO alumnos (id, fotografia, nombre, apellido, CU, id_carrera) VALUES (NULL, '$fotografia', '$nombre', '$apellido', '$CU', $id_carrera)";
+    $sql = "INSERT INTO alumno (id, fotografia, nombres, apellidos, CU, idcarrera) VALUES (NULL, '$fotografia', '$nombres', '$apellidos', '$CU', $idcarrera)";
 
     if ($connect->query($sql) === TRUE) {
         echo "Alumno registrado";
@@ -28,7 +28,13 @@ if (isset($_POST["nombre"])) {
     }
 
     $connect->close();
+
 }
 ?>
+<script>
+    setTimeout(function(){
+        cargarContenido('read.php');
+    }, 3000);
+</script>
 
-<meta http-equiv="refresh" content="3; url=read.php" />
+<!-- <meta http-equiv="refresh" content="3; url=javascript:cargarContenido('read.php')" />; -->

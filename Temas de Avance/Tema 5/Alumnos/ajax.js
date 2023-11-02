@@ -5,11 +5,30 @@ function cargarContenido(abrir) {
 	ajax.open("get", abrir, true);
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4) {
-			contenedor.innerHTML = ajax.responseText
+			contenedor.innerHTML = ajax.responseText;
 		}
 	}
 	ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
 	ajax.send();
+}
+
+function registrarAlumno() {
+	// alert('respondiendo');
+    var contenedor;
+    contenedor = document.getElementById('container2');
+    var formulario = document.getElementById("form-registro");
+    var parametros = new FormData(formulario);
+    
+    var ajax = new XMLHttpRequest() //crea el objetov ajax 
+    ajax.open("POST", 'create.php', true);
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            contenedor.innerHTML = ajax.responseText;
+			cargarContenido('read.php');
+        }
+    }
+
+    ajax.send(parametros);
 }
 
 function crea_lista_parametros() {

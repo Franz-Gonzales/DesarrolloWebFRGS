@@ -1,15 +1,14 @@
 <?php
-include('verificar.php');
-include('permisos.php');
-include('../db.php');
+
+include('bd.php');
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
     // $fotografia = $_POST['fotografia']['name'];
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
+    $nombres = $_POST['nombres'];
+    $apellidos = $_POST['apellidos'];
     $CU = $_POST['CU'];
-    $id_carrera = $_POST['id_carrera'];
+    $idcarrera = $_POST['idcarrera'];
 
     
     // Para actualizar la imagen
@@ -21,13 +20,13 @@ if (isset($_POST['id'])) {
         move_uploaded_file($_FILES['fotografia']['tmp_name'], './images/' . $fotografia);
         // copy($_FILES['fotografia']['tmp_name'], './images/' . $fotografia);
 
-        $sql = "UPDATE alumnos SET fotografia = '$fotografia', nombre = '$nombre', apellido = '$apellido', CU = '$CU', id_carrera = $id_carrera WHERE id = $id";
+        $sql = "UPDATE alumno SET fotografia = '$fotografia', nombres = '$nombres', apellidos = '$apellidos', CU = '$CU', idcarrera = $idcarrera WHERE id = $id";
     }else{
-        $sql = "UPDATE alumnos SET nombre = '$nombre', apellido = '$apellido', CU = '$CU', id_carrera = $id_carrera WHERE id = $id";
+        $sql = "UPDATE alumno SET nombres = '$nombres', apellidos = '$apellidos', CU = '$CU', idcarrera = $idcarrera WHERE id = $id";
     }
     
 
-    // $sql = "UPDATE alumnos SET nombre = '$nombre', apellido = '$apellido', CU = '$CU', id_carrera = $id_carrera WHERE id = $id";
+    // $sql = "UPDATE alumnos SET nombres = '$nombres', apellidos = '$apellidos', CU = '$CU', idcarrera = $idcarrera WHERE id = $id";
 
     // echo $sql;
     if ($connect->query($sql) === TRUE) {
