@@ -39,4 +39,4 @@ if (isset($_POST['id'])) {
 
 ?>
 
-<meta http-equiv="refresh" content="3; url=read.php" />
+<!-- <meta http-equiv="refresh" content="3; url=read.php" /> -->

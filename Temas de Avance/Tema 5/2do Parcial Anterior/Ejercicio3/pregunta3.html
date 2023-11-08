@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="contenido">
+      <div id="titulo"></div>
+      <ul>
+        <li><a href="javascript:mostrar_form()">Pregunta 2</a></li>
+        <li><a href="javascript:cargarContenido('formInsertar.html')">Pregunta 3</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function mostrar_form() {
+        var titulo = document.getElementById("titulo");
+        var contenido = document.getElementById("contenido");
+
+        titulo.innerHTML = "Pregunta 2 DOM en Javascript";
+
+        var html = `
+            <div>
+        <label for="filas">Filas: </label>
+        <input type="number" id="filas">
+        </div>
+        <div>
+            <label for="columnas">Columnas: </label>
+            <input type="number" id="columnas">
+        </div>
+        <button id="btn_dibujar" onclick="dibujarTabla()">Dibujar</button>
+            `;
+
+        contenido.innerHTML += html;
+      }
+
+      function dibujarTabla() {
+        var filas = document.getElementById("filas").value;
+        var columnas = document.getElementById("columnas").value;
+        var contenido = document.getElementById("contenido");
+
+        var tabla = `
+            <table border="1">
+            <tr>`;
+        for (var i = 1; i <= filas; i++) {
+          tabla += `<td>${i}</td>`;
+        }
+        tabla += `
+            </tr>
+            <tr>`;
+        for (var i = 1; i <= columnas; i++) {
+          tabla += `<td>${i}</td>`;
+        }
+        tabla += `
+            </tr>
+        </table>
+            `;
+        contenido.innerHTML += tabla;
+      }
+
+      function mostrar_formInsertar() {
+        var titulo = document.getElementById("titulo");
+        var contenido = document.getElementById("contenido");
+
+        titulo.innerHTML = "Pregunta 2 DOM en Javascript";
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function cargarContenido(abrir) {
+        var contenedor;
+        contenedor = document.getElementById("contenido");
+        fetch(abrir)
+          .then((response) => response.text())
+          .then((data) => (contenedor.innerHTML = data));
+      }
+
+
+    //   function cargarContenido(abrir) {
+
+    //     var contenedor;
+    //     contenedor = document.getElementById('datos');
+    //     fetch(abrir)
+    //         .then(response => response.text())
+    //         .then(data => contenedor.innerHTML = data);
+    //     }
+    //     function editarPersona(id) {
+    //     var contenedor;
+    //     contenedor = document.getElementById('datos');
+    //     fetch('form_update.php?id=' + id)
+    //         .then(response => response.text())
+    //         .then(data => contenedor.innerHTML = data);
+
+    //     }
+
+
+      function crearAlumno() {
+        var contenedor;
+        contenedor = document.getElementById("datos");
+        var formulario = document.getElementById("form-alumno");
+        var parametros = new FormData(formulario);
+        fetch("creaciones.php", { method: "POST", body: parametros })
+          .then((response) => response.text())
+          .then((data) => (contenedor.innerHTML = data));
+      }
+      function editarAlumno(id) {
+        cargarContenido("form_update_alumno.php?id=" + id);
+      }
+      function update() {
+        var contenedor;
+        contenedor = document.getElementById("datos");
+        var formulario = document.getElementById("form-alumno");
+        var parametros = new FormData(formulario);
+        fetch("update.php", { method: "POST", body: parametros })
+          .then((response) => response.text())
+          .then((data) => {
+            contenedor.innerHTML = data;
+            cargarContenido("read.php");
+          });
+      }
+      function deleteAlumno(id) {
+        cargarContenido("delete.php?id=" + id);
+      }
+    </script>
+  </body>
+</html>

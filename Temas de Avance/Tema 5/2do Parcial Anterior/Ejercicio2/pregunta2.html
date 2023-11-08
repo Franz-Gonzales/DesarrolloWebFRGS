@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenido">
+        
+        <ul>
+            <li><a href="javascript:mostrar_form()">Pregunta 2</a></li>
+        </ul>
+
+        <div id="titulo"></div>
+        
+    </div>
+    
+  
+
+
+    <script>
+        
+        function mostrar_form(){
+            var titulo =  document.getElementById('titulo');
+            var contenido = document.getElementById('contenido');
+
+            titulo.innerHTML = 'Pregunta 2 DOM en Javascript';
+
+            var html = `
+            <div>
+        <label for="filas">Filas: </label>
+        <input type="number" id="filas">
+        </div>
+        <div>
+            <label for="columnas">Columnas: </label>
+            <input type="number" id="columnas">
+        </div>
+        <button id="btn_dibujar" onclick="dibujarTabla()">Dibujar</button>
+            `;
+
+            contenido.innerHTML += html;
+        }
+
+
+        function dibujarTabla(){
+            var filas = document.getElementById('filas').value;
+            var columnas = document.getElementById('columnas').value;
+            var contenido = document.getElementById('contenido');
+
+            var tabla = `
+            <table border="1">
+            <tr>`
+            for(var i = 1; i <= filas; i++){
+                tabla += `<td>${i}</td>`;
+                
+            }
+            tabla += `
+            </tr>
+            <tr>`
+            for(var i = 1; i <= columnas; i++){
+                tabla += `<td>${i}</td>`
+            }
+            tabla += `
+            </tr>
+        </table>
+            `;
+
+        contenido.innerHTML += tabla;
+        }
+    </script>
+</body>
+</html>

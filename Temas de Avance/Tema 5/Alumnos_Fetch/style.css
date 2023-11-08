@@ -1,0 +1,494 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+
+.container{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.container .header{
+    background: #1f57d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container .header h1{
+    color: white;
+}
+
+.container .menu{
+    display: flex;
+    background: linear-gradient(to top left, #da52df, #a9c448, #15cfbc);
+}
+
+.container .menu .navigation{
+    background: #d0dca4;
+    width: 150px;
+}
+
+.container .menu .navigation ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.container .menu .navigation ul li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    
+}
+
+.container .menu .navigation ul li{
+    background: #e78529;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container .menu .navigation ul li:hover{
+    transform: scale(1.1);
+    transition: 0.23s;
+    background: white;
+}
+
+.container .menu .navigation ul li:hover a{
+    color: #e78529;
+    transition: 0.23s;
+}
+
+
+.container .menu .container2{
+    /* background: #dedede; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container ul{
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root{
+    --background-white: rgba(255, 255, 255, 0.595);
+}
+
+
+/* body{
+    background: linear-gradient(to top left, #da52df, #a9c448, #15cfbc);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* ESTILOS PARA ALUMNOS */
+.body{
+    background: linear-gradient(to top left, #da52df, #a9c448, #15cfbc);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.contaniner-alumnos{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: auto;
+    width: 950px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.contaniner-alumnos h2{
+    color: blue;
+}
+
+.contaniner-alumnos table{
+    width: 100%;
+    padding: 10px;
+}
+
+.contaniner-alumnos table tr{
+    border: 1px solid black;
+}
+
+.contaniner-alumnos table tr th{
+    color: rgb(26, 11, 136);
+    font-size: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.262);
+    text-align: center;
+}
+
+.contaniner-alumnos table tr td{
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.262);
+}
+
+.contaniner-alumnos table tr .operaciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contaniner-alumnos table tr .operaciones a button{
+    padding: 6px;
+}
+
+.contaniner-alumnos table tr .operaciones a button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.contaniner-alumnos table tr .operaciones a .button1{
+    background: rgb(10, 147, 185);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.contaniner-alumnos table tr .operaciones a .button2{
+    background: rgb(212, 56, 32);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.contaniner-alumnos .btn_registro{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.contaniner-alumnos .btn_registro:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+
+
+/* STYLE PARA LA SECCION DE REGISTRO */
+.contaniner-alumno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contaniner-alumno form{
+    display: flex;  
+    justify-content: center;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: 420px;
+    width: 550px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contaniner-alumno form .datos-alumnos{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.contaniner-alumno form h2{
+    color: blue;
+    text-align: center;
+}
+
+.contaniner-alumno form .datos-alumnos label{
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contaniner-alumno form .datos-alumnos input{
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+    background: transparent;
+}
+
+.contaniner-alumno form .datos-alumnos select{
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+    background: transparent;
+
+}
+
+.contaniner-alumno form .registrar{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 5px;
+}
+
+.contaniner-alumno form .registrar:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+
+}
+
+.btn_cancelar{
+    background: #3b9ccd;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.btn_cancelar:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+
+
+
+
+
+
+
+/* STYLE PARA LAS CARRERAS */
+.container-carreras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.container-carreras h2{
+    color: rgb(38, 0, 255);
+    text-align: center;
+}
+
+.container-carreras form{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: 300px;
+    width: 700px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.container-carreras form .datos-carrera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container-carreras form .datos-carrera label{
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+    
+}
+
+.container-carreras form .datos-carrera input{
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 300px;
+    background: transparent;
+
+}
+
+.container-carreras form .registrar{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-top: 5px;
+
+}
+
+.container-carreras form .registrar:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}
+
+
+/* STYLE PARA EL REGISTRO DE LAS CARRERAS */
+h1{
+    color: red;
+}
+.container-carrera{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background-white);
+    border-radius: 5px;
+    height: auto;
+    width: 850px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.container-carrera table{
+    width: 100%;
+    padding: 10px;
+}
+
+.container-carrera table tr th{
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    padding: 5px;
+    color: blue;
+}
+
+.container-carrera table tr td{
+    /* border: 1px solid black; */
+    padding: 5px;
+}
+
+.container-carrera table tr .operaciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.container-carrera table tr .operaciones a button{
+    padding: 6px;
+}
+
+.container-carrera table tr .operaciones a button:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+
+}
+
+.container-carrera table tr .operaciones a .button1{
+    background: rgb(10, 147, 185);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.container-carrera table tr .operaciones a .button2{
+    background: rgb(212, 56, 32);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.container-carrera .btn_registro{
+    background: linear-gradient(to left, #1e15cf,#3bbacd, #1e15cf);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.container-carrera .btn_registro:hover{
+    transform: scale(1.1);
+    transition: 0.25s;
+}

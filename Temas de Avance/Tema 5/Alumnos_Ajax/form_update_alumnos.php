@@ -1,7 +1,3 @@
-<?php
-// include('verificar.php');
-// include('permisos.php');
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="ajax.js"></script>
     <style>
         .contaniner-alumno form {
             display: flex;
@@ -56,7 +53,7 @@
     ?>
     <h1>FACULTAD DE TECNOLOGIA</h1>
     <div class="contaniner-alumno">
-        <form action="update.php" method="post" enctype="multipart/form-data">
+        <form action="javascript:update()" method="post" enctype="multipart/form-data" id="form-update">
             <h2>Formulario para Editar los datos Alumnos</h2>
             <div class="datos-alumnos">
                 <div class="photo">
@@ -84,7 +81,7 @@
                 <select name="idcarrera" id="idcarrera">
                     <?php
                     while ($row_carrera = $result_carrera->fetch_assoc()) { ?>
-                        <option value="<?php echo $row_carrera["id"]; ?>" <?php echo $row_carrera["id"] === $row["idcarrera"] ? "selected" : ''; ?>><?php echo $row_carrera['nombre']; ?></option>
+                        <option value="<?php echo $row_carrera["id"]; ?>" <?php echo $row_carrera["id"] === $row["idcarrera"] ? "selected" : ''; ?> ><?php echo $row_carrera['nombre']; ?></option>
                     <?php } ?>
 
                 </select>
@@ -94,7 +91,7 @@
             <input type="submit" value="Actualizar" class="registrar">
         </form>
     </div>
-    <a href="read.php"><button class="btn_cancelar">Cancelar Edición</button></a>
+    <a href="javascript:cargarContenido('read.php')"><button class="btn_cancelar">Cancelar Edición</button></a>
 
 </body>
 

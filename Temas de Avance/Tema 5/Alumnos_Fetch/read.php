@@ -9,6 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="fetch.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <style>
         a {
             text-decoration: none;
@@ -88,8 +90,8 @@
                         <td><?php echo $row["CU"]; ?></td>
                         <td><?php echo $row["carrera"]; ?></td>
                         <td class="operaciones">
-                        <a href="form_update_alumnos.php?id=<?php echo $row['id']; ?>"><button class="button1">Editar</button></a>
-                            <a href="delete.php?id=<?php echo $row['id']; ?>"><button class="button2">Eliminar</button></a>
+                        <a href="javascript:editarAlumno(<?php echo $row['id']; ?>)"><button class="button1">Editar</button></a>
+                            <a href="javascript:deleteAlumno(<?php echo $row['id']; ?>)"><button class="button2">Eliminar</button></a>
                         </td>
 
                     </tr>
@@ -101,7 +103,7 @@
         ?>
             <p>No existe registros que mostrar</p>
         <?php } ?>
-        <a href=""><button class="btn_cancelar">Registrar Alumno</button></a>
+        <a href="javascript:cargarContenido('form_alumnos.php')"><button class="btn_cancelar">Registrar Alumno</button></a>
 
         </div>
 </body>
