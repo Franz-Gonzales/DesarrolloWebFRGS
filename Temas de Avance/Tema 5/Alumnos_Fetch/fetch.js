@@ -34,9 +34,9 @@ function update() {
     .then((data) => {
       contenedor.innerHTML = data;
 
-      setTimeout(() =>{
-        cargarContenido("read.php");
-      }, 1000);
+      // setTimeout(() =>{
+      //   cargarContenido("read.php");
+      // }, 1000);
 
     });
     

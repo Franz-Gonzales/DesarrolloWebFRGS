@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="fetch.js"></script>
+</head>
+<body>
+    <a href="javascript:cargarContenido('login.html')"><button>Login</button></a>
+    <!-- <button onclick="mostrarLogin()">Login</button> -->
+    <div id="container">
+    </div>
+
+    <script>
+    //   function cargarContenido(abrir) {
+    //     var contenedor;
+    //     contenedor = document.getElementById("container");
+    //     fetch(abrir)
+    //     .then((response) => response.text())
+    //     .then((data) => contenedor.innerHTML = data);
+    // }
+
+     function mostrarLogin(){
+        cargarContenido('login.php');
+     }
+  
+    </script>
+</body>
+</html>

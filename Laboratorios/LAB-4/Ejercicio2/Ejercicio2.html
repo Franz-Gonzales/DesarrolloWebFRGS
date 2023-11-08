@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Imagen a comprovar </h2>
+        <img src="./img/bicho.png" alt="bicho" id="imagen" width="200px">
+
+        <div>
+            <label for="numero">Introduce un número: </label>
+            <input type="number" name="numero" id="numero">
+        </div>
+        <button onclick="agrandarImagen();">Agrandar</button>
+        <button onclick="reducirImagen();">Reducir</button>
+    </div>
+
+    <script>
+
+        function agrandarImagen(){
+            // img.width += numero;
+            var numero = parseInt(document.getElementById('numero').value);
+            var imagen = document.getElementById('imagen');
+
+            imagen.width += numero;
+        }
+
+        function reducirImagen(){
+            // imagen.width -= numero;
+            var numero = parseInt(document.getElementById('numero').value);
+            var imagen = document.getElementById('imagen');
+
+            imagen.width -= numero;
+        }
+    </script>
+</body>
+</html>

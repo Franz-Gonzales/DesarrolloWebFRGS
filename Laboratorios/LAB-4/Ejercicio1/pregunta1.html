@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mostrarLista()">Mostrar</button>
+    <div id="lista-container"></div>
+
+
+    <script>
+        function mostrarLista(){
+            // fetch("lista.php", {method: "GET", data: 'json'})
+            fetch('lista.php').then(response => {
+                return response.json();
+            }).then(data => mostrarTabla(data))
+        }
+
+
+        function mostrarTabla(tabla_estudiantes){
+
+            var listaContainer = document.getElementById('lista-container');
+            var tabla = `
+            <table border="1">
+            <tr>
+                <th>Nro</th>
+                <th>Apellidos Nombre</th>
+                <th>Edad</th>
+                <th>Materia</th>
+                <th>Nota</th>
+            </tr>`;
+
+            tabla_estudiantes.forEach(estudiante => {
+                tabla += `
+                <tr>
+                    <td>${estudiante.nro}</td>
+                    <td>${estudiante.nombre}</td>
+                    <td>${estudiante.edad}</td>
+                    <td>${estudiante.materia}</td>
+                    <td>${estudiante.nota}</td>
+                </tr>
+                `;
+            });
+            
+            tabla += `</table>`;
+
+            listaContainer.innerHTML = tabla;
+        }
+
+
+
+        function registrarAlumno() {
+        var contenedor = document.getElementById("container2");
+        var formulario = document.getElementById("form-registro");
+        var parametros = new FormData(formulario);
+
+        fetch("create.php", { method: "POST", body: parametros })
+            .then((response) => response.text())
+            .then((data) => (contenedor.innerHTML = data));
+
+        setTimeout(() => {
+            cargarContenido("read.php");
+        }, 1000);
+        }
+       
+    </script>
+</body>
+</html>

@@ -14,11 +14,20 @@ if (isset($_POST['id'])) {
     // Para actualizar la imagen
     if (isset($_FILES['fotografia'])) {
         $archivo_original = (isset($_FILES['fotografia']['name'])) ? $_FILES['fotografia']['name'] : '';
+        // echo $archivo_original;
+        
         $arreglo_img = explode(".", $archivo_original);
+
+        // foreach($arreglo_img as $img){
+        //     echo $img;
+        // }
+        
         $extension = $arreglo_img[1];
         $fotografia = uniqid() . '.' . $extension;
         move_uploaded_file($_FILES['fotografia']['tmp_name'], './images/' . $fotografia);
         // copy($_FILES['fotografia']['tmp_name'], './images/' . $fotografia);
+
+        // unlink("Imagenes/$foto_actual");
 
         $sql = "UPDATE alumno SET fotografia = '$fotografia', nombres = '$nombres', apellidos = '$apellidos', CU = '$CU', idcarrera = $idcarrera WHERE id = $id";
     }else{
