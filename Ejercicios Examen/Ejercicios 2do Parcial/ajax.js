@@ -1,6 +1,9 @@
 
 function cargarContenido(abrir) {
     var contenido = document.getElementById('contenido');
+    var mensaje = document.getElementById('mensaje');
+    mensaje.innerHTML = "";
+
     var ajax = new XMLHttpRequest();
 
     ajax.open("get", abrir, true);
@@ -15,7 +18,8 @@ function cargarContenido(abrir) {
 }
 
 
-	// //? PREGUNTA 1
+
+	//? EJERCICIO 1
     var turno = 'X';
 
     function cambiarTurno() {
@@ -47,8 +51,10 @@ function cargarContenido(abrir) {
         cambiarTurno();
     }
 	
+
+
     
-    //? PREGUNTA 2
+    //? EJERCICIO 2
     function mostrarResultado(){
         var nro_inicio = parseInt(document.getElementById('nro_inicial').value);
         var nro_mayor = parseInt(document.getElementById('nro_mayor').value);
@@ -105,7 +111,7 @@ function cargarContenido(abrir) {
 
 
 
-    //? PREGUNTA 3
+    //? EJERCICIO 3
     function autenticar() {
         // alert('entro');
         var contenido = document.getElementById('contenido');
@@ -125,10 +131,8 @@ function cargarContenido(abrir) {
         console.log(parametros)
         ajax.send(parametros);
     }
-
     
     function actualizar(id, nivel){
-
         // alert(id, nivel);
         cargarContenido('./Ejercicio3/update.php?id=' + id + '&nivel=' + nivel);
         // cargarContenido('./Ejercicio3/listar.php');
@@ -147,29 +151,48 @@ function cargarContenido(abrir) {
     }
 
 
+
     //? EJERCICIO 5
-    function mostrarFotosLibros(){
-        // var libros = document.getElementById('libros').value;
-        var container_libros = document.getElementById('fotos-libros')
+    function mostrarLibros(){
+        var libros = document.getElementById('libros');
+        // console.log(libros.value);
 
         fetch("./Ejercicio5/datos.php")
-        .then((respuesta) => respuesta.text())
+        .then((response) => response.text())
             .then((data) => {
                 var objeto = JSON.parse(data);
                 
-                container_libros.innerHTML = '';
+                libros.innerHTML = '';
 
                 for (var i = 0; i < objeto.length; i++) {
 
-
-                    // const imagen = document.createElement("img");
-                    // imagen.id = objeto[i].id;
-                    // imagen.src = './Ejercicio5/img/' + objeto[i].imagen;
-                    // imagen.width = '200px';
+                    var option = document.createElement("option");
+                    // imagen.width = "200px";
+                    // imagen.src = `./Ejercicio5/img/${libros}`;
                     // imagen.alt = "img";
-                    // document.getElementById('fotos-libros').appendChild(imagen);
+                    option.value = objeto[i].imagen;
+                    option.innerHTML = objeto[i].titulo;
+
+                    libros.appendChild(option);
                 }
             });
+    }
+
+
+    function mostrarFotoLibros(){
+
+        var fotos_libros = document.getElementById('fotos-libros');
+        var libros = document.getElementById('libros');
+        var imagen = document.createElement("img");
+
+        console.log(libros.value);
+
+        imagen.src = `./Ejercicio5/img/${libros.value}`;
+        imagen.alt = "img";
+        imagen.width = "200px";
+        imagen.height = "400px";
+
+        fotos_libros.appendChild(imagen);
     }
 
  
