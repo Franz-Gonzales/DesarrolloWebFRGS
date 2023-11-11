@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajax_fetch.js"></script>
+    <style>
+        .btn{
+            width: 70px;
+            height: 70px;
+            text-align: center;
+        }
+
+        .botones{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="botones" id="botones">
+        <a href="#"><button class="btn">1</button></a>
+        <a href="javascript:cargarContenidoFetch('galeria.php')"><button class="btn">2</button></a>
+        <a href="javascript:abrirContenidoFetch('login.php')"><button class="btn">3</button></a>
+        <a href="javascript:abrirContenidoFetch('login.php')"><button class="btn">4</button></a>
+        <a href="javascript:abrirContenido('datos.html')"><button class="btn">5</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajax_fetch.js"></script>
+    <style>
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .contenedor-1{
+            display: flex;
+            width: 100%;
+        }
+        
+
+        .menu{
+            background: yellow;
+            height: auto;
+            width: 250px;
+            text-align: center;
+        }
+        
+        .principal{
+            border: 1px solid green;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor-2{
+            display: flex;
+            width: 100%;
+        }
+
+        .contenedor-2 .mensaje{
+            background: rgb(224, 139, 21);
+            width: 100%;
+            color: white;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn_menu{
+            background: red;
+            height: 40px;
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+         
+        <div class="contenedor-1">
+            <div class="principal" id="principal">
+
+            </div>
+            <div class="menu" id="menu"></div>
+        </div>
+        <div class="contenedor-2">
+            <a href="javascript:cargarContenido('botones.html')"><button id="btn_menu">Menu</button></a>
+            <div class="mensaje" id="mensaje"></div>
+        </div>
+    </div>
+</body>
+</html>
