@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2do Parcial</title>
+    <script src="ajax.js"></script>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid rgb(13, 154, 13);
+        }
+
+        .container .contenido{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .container .navigation{
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(13, 154, 13);
+            width: 120px;
+            align-items: center;
+            gap: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .container .navigation a{
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .container .navigation a .items{
+            border: 1px solid black;
+            padding: 5px;
+            list-style: none;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+        }
+        
+
+        .mensaje{
+            background: rgb(39, 39, 223);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="javascript:cargarContenido('./Ejercicio1/tresenraya1.html')"><div class="items">1</div></a>
+            <a href="javascript:cargarContenido('./Ejercicio2/tabla.html')"><div class="items">2</div></a>
+            <a href="javascript:cargarContenido('./Ejercicio3/form_login.html')"><div class="items">3</div></a>
+            <a href="javascript:cargarContenido('./Ejercicio4/listar.php')"><div class="items">4</div></a>
+            <a href="javascript:cargarContenido('./Ejercicio5/libros.php')"><div class="items">5</div></a>
+        </div>
+
+        <div class="contenido" id="contenido"></div>
+        
+    </div>
+
+    <div class="mensaje" id="mensaje">
+    </div>
+
+    
+</body>
+</html>

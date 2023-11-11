@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <script src="../ajax.js"></script>
+    <style>
+        .tabla{
+            display: flex;
+            border: 1px solid black;
+            height: 60px;
+            width: 95%;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .tabla .operaciones{
+            /* display: flex;
+            flex-direction: column; */
+            height: 60px;
+        }
+
+        .resultado{
+            margin-top: 10px;
+            border: 1px solid black;
+            width: 95%;
+            margin-bottom: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabla" id="tabla">
+        <label for="nro_inicial">Tabla de: </label>
+        <input type="number" id="nro_inicial" name="nro_inicial">
+
+        <div class="operaciones">
+            <input type="radio" value="suma" id="suma" name="operacion" title="nro">Suma <br>
+            <input type="radio" value="multiplicacion" id="multiplicacion" name="operacion" title="nro">Multiplicacion
+        </div>
+        <div class="operaciones">
+            <input type="radio" value="resta" id="resta" name="operacion" title="nro">Resta <br>
+            <input type="radio" value="division" id="division" name="operacion" title="nro">Division
+        </div>
+
+        <label for="nro_mayor">Hasta el: </label>
+        <input type="number" id="nro_mayor" name="nro_mayor">
+
+        <button id="btn_tabla" onclick="mostrarResultado()">Tabla</button>
+    </div>
+
+    <div class="resultado" id="resultado"></div>
+</body>
+</html>

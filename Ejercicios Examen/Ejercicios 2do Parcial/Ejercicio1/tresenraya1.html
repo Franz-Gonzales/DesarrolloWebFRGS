@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../ajax.js"></script>
+    <style>
+        .contenedor{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        td{
+            width: 50px;
+            height: 40px;
+            border: 2px solid black;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Juego Tres en Raya</h1>
+
+        <table>
+            <tr>
+                <td id="1" onclick="marcarCasilla('1')"></td>
+                <td id="2" onclick="marcarCasilla('2')"></td>
+                <td id="3" onclick="marcarCasilla('3')"></td>
+            </tr>
+            <tr>
+                <td id="4" onclick="marcarCasilla('4')"></td>
+                <td id="5" onclick="marcarCasilla('5')"></td>
+                <td id="6" onclick="marcarCasilla('6')"></td>
+            </tr>
+            <tr>
+                <td id="7" onclick="marcarCasilla('7')"></td>
+                <td id="8" onclick="marcarCasilla('8')"></td>
+                <td id="9" onclick="marcarCasilla('9')"></td>
+            </tr>
+        </table>
+    </div>
+
+
+   
+
+<script>
+
+    // var Juego = {
+    //     turno: 'X',
+
+    //     cambiarTurno: function() {
+    //         if (Juego.turno == 'X') {
+    //             Juego.turno = 'O';
+    //         } else {
+    //             Juego.turno = 'X';
+    //         }
+    //     },
+
+    //     marcarCasilla: function(id) {
+    //         var casilla = document.getElementById(id);
+
+    //         if (!casilla.innerHTML) {
+    //             casilla.innerHTML = Juego.turno;
+    //             Juego.cambiarTurno();
+    //         }
+    //     }
+    // };
+</script>
+</body>
+</html>
+
+</body>
+</html>
+   
+</html>
