@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../ajax.js"></script>
-    <style>
-        .fotos-libros{
-            border: 1px solid rgba(0, 0, 0, 0.419);
-        }
-    </style>
 </head>
 <body>
 
-    <div class="contenedor">
-        <h1>Fotos de Libros</h1>
-        <select name="libros" id="libros" onclick="mostrarLibros()" onchange="mostrarFotoLibros()" title="libros">
-            <option value="">Seleccione un Libro</option>
-        </select>
-
-        <div class="fotos-libros" id="fotos-libros"></div>
+    <div class="fotos-contenido">
+        <form action="" id="formulario-imagen">
+            <h1>Libros</h1>
+            <select name="usuario" id="fotografia" onclick="mostrarLibros() " onchange="mostrarFotoLibros()" title=".">
+                <option value="seleccionar">Seleccion título Libro</option>
+            </select>
+        </form>
+        <br>
+        <div class="fotos-libros" id="fotos-libros" >
+        </div>
+       
     </div>
-    <script src="../ajax.js"></script>
+    
 </body>
 </html>

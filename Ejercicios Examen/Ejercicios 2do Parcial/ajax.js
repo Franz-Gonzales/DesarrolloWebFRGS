@@ -153,46 +153,93 @@ function cargarContenido(abrir) {
 
 
     //? EJERCICIO 5
-    function mostrarLibros(){
-        var libros = document.getElementById('libros');
-        // console.log(libros.value);
 
+    function mostrarLibros() {
+
+        var fotografia = document.getElementById("fotografia");
+        var option = fotografia.value;
+    
+        // console.log(fotografia.innerHTML);
         fetch("./Ejercicio5/datos.php")
-        .then((response) => response.text())
-            .then((data) => {
+            .then(response => response.text())
+            .then(data => {
+    
                 var objeto = JSON.parse(data);
-                
-                libros.innerHTML = '';
-
+                var select = `<option value="seleccionar">Seleccionar</option>`;
+                // var select = `<option value="seleccionar">Seleccionar</option>`;
+    
                 for (var i = 0; i < objeto.length; i++) {
-
-                    var option = document.createElement("option");
-                    // imagen.width = "200px";
-                    // imagen.src = `./Ejercicio5/img/${libros}`;
-                    // imagen.alt = "img";
-                    option.value = objeto[i].imagen;
-                    option.innerHTML = objeto[i].titulo;
-
-                    libros.appendChild(option);
+                    
+                    select += `<option value="${objeto[i].imagen}">${objeto[i].titulo}</option>`;
+                    // let img = document.createElement('img');
+                    // img.src = objeto[i].titulo;
+                    // img.with = "200px"
                 }
+                fotografia.innerHTML = select;
+                fotografia.value = option;
+    
             });
+    
     }
-
-
     function mostrarFotoLibros(){
-
-        var fotos_libros = document.getElementById('fotos-libros');
-        var libros = document.getElementById('libros');
-        var imagen = document.createElement("img");
-
-        console.log(libros.value);
-
-        imagen.src = `./Ejercicio5/img/${libros.value}`;
-        imagen.alt = "img";
-        imagen.width = "200px";
-        imagen.height = "400px";
-
-        fotos_libros.appendChild(imagen);
+    
+        var imagen = document.getElementById("fotografia").value;
+        var fotos_libros = document.getElementById("fotos-libros");
+        
+        // console.log(imagen.value);
+        var img =`<img src="./Ejercicio5/img/${imagen}" alt="${imagen}" width="400">`;
+    
+        fotos_libros.innerHTML = img;
+    
+        document.getElementById("fotografia").value = imagen;
+        // imagen.value = img;
+    
     }
+
+
+
+
+
+    // function mostrarLibros(){
+    //     var libros = document.getElementById('libros');
+    //     // console.log(libros.value);
+
+    //     fetch("./Ejercicio5/datos.php")
+    //     .then((response) => response.text())
+    //         .then((data) => {
+    //             var objeto = JSON.parse(data);
+                
+    //             libros.innerHTML = '';
+
+    //             for (var i = 0; i < objeto.length; i++) {
+
+    //                 var option = document.createElement("option");
+    //                 // imagen.width = "200px";
+    //                 // imagen.src = `./Ejercicio5/img/${libros}`;
+    //                 // imagen.alt = "img";
+    //                 option.value = objeto[i].imagen;
+    //                 option.innerHTML = objeto[i].titulo;
+
+    //                 libros.appendChild(option);
+    //             }
+    //         });
+    // }
+
+
+    // function mostrarFotoLibros(){
+
+    //     var fotos_libros = document.getElementById('fotos-libros');
+    //     var libros = document.getElementById('libros');
+    //     var imagen = document.createElement("img");
+
+    //     console.log(libros.value);
+
+    //     imagen.src = `./Ejercicio5/img/${libros.value}`;
+    //     imagen.alt = "img";
+    //     imagen.width = "200px";
+    //     imagen.height = "400px";
+
+    //     fotos_libros.appendChild(imagen);
+    // }
 
  
