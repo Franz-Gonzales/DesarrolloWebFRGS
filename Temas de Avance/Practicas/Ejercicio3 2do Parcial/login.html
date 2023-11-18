@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function showLogin() {
+        document.getElementById("loginForm").style.display = "block";
+      }
+
+      function hideLogin() {
+        document.getElementById("loginForm").style.display = "none";
+      }
+
+      function validateLogin() {
+        var user = document.getElementById("user").value;
+        var pass = document.getElementById("pass").value;
+        var captcha = document.getElementById("captcha").value;
+
+        if (user == "" || pass == "" || captcha == "") {
+          alert("Por favor complete todos los campos");
+          return false;
+        }
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == "success") {
+              hideLogin();
+              alert("Logueado correctamente");
+            } else {
+              alert("Usuario no valido");
+            }
+          }
+        };
+        xhttp.open("POST", "autenticar.php", true);
+        xhttp.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        xhttp.send("user=" + user + "&pass=" + pass + "&captcha=" + captcha);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showLogin()">Mostrar Login</button>
+
+    <div id="loginForm" class="hidden">
+      <form>
+        <label for="user">Usuario:</label><br />
+        <input type="text" id="user" name="user" /><br />
+        <label for="pass">Contraseña:</label><br />
+        <input type="password" id="pass" name="pass" /><br />
+        <label for="captcha">Captcha:</label><br />
+        <input type="text" id="captcha" name="captcha" /><br />
+        <button type="button" onclick="validateLogin()">Loguearse</button>
+      </form>
+    </div>
+  </body>
+</html>
