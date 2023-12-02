@@ -305,6 +305,10 @@
         password_input.addEventListener("focusout", () => {
             owl_login.classList.remove("active");
         });
+
+        password_input.addEventListener('change', ()=>{
+            console.log(password_input.value);
+        })
     </script>
 
 </body>

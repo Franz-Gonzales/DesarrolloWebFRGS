@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="container-pregunta1">
+        <form action="autenticar.php" method="post">
+            <h2>Login</h2>
+            <div class="datos-login">
+                <div>
+                    <label for="usuario">Usuario:</label>
+                    <input type="email" name="usuario" id="usuario">
+                </div>
+                <div class="datos">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" readonly>
+                </div>
+            </div>
+
+            <div class="teclado-virtual">
+                <table>
+                    <tr>
+                        <td onclick="agregarNumeros('1')">1</td>
+                        <td onclick="agregarNumeros('2')">2</td>
+                        <td onclick="agregarNumeros('3')">3</td>
+                    </tr>
+                    <tr>
+                        <td onclick="agregarNumeros('4')">4</td>
+                        <td onclick="agregarNumeros('5')">5</td>
+                        <td onclick="agregarNumeros('6')">6</td>
+                    </tr>
+                    <tr>
+                        <td onclick="agregarNumeros('7')">7</td>
+                        <td onclick="agregarNumeros('8')">8</td>
+                        <td onclick="agregarNumeros('9')">9</td>
+                    </tr>
+                    <tr>
+                        <td onclick="agregarNumeros('A')">A</td>
+                        <td onclick="agregarNumeros('0')">0</td>
+                        <td onclick="agregarNumeros('C')">C</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="butones" id="">
+                <button type="submit" id="btn_" onclick="limpiar()">Entrar</button>
+            </div>
+        </form>
+        <button class="btn_limpiar" onclick="limpiar()">Limpiar</button>
+
+    </div>
+
+    <script>
+        function limpiar(){
+            document.getElementById('password').value = "";
+        }
+
+
+        function agregarNumeros(numero){
+            var password = document.getElementById('password');
+            password.value += numero;
+        }
+        // var password = document.getElementById('password');
+        function borrar(){
+            var password = document.getElementById('password').value;
+            // console.log(password);
+            
+            var ultimo_posicion = password.length;
+
+            // console.log(ultimo_posicion);
+
+            var delete_password = password.slice(0, ultimo_posicion - 1);
+            document.getElementById('password').value = delete_password;
+
+        }
+
+        // password.addEventListener('input', ()=>{
+        //     console.log(password.value);
+        // })
+    </script>
+</body>
+</html>

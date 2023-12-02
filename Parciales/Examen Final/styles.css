@@ -103,6 +103,11 @@ body{
     font-weight: bold;
 }
 
+.principal .navigation .menu .botenes a .btn:hover{
+    background: black;
+    color: white
+}
+
 .principal .navigation .titulo{
     width: 100%;
     padding: 14px;
@@ -183,4 +188,114 @@ body{
 
 .principal .navigation .contenido .card-container .datos p{
     color: rgb(131, 129, 129);
+}
+
+
+
+
+/* ESTILOS PARA EL LOGIN  */
+td{
+    width: 30px;
+    border: 1px solid black;
+}
+
+
+h2 {
+    color: #333;
+}
+
+.container-pregunta1 {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container-pregunta1 .butones{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-pregunta1 .teclado-virtual{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-pregunta1 form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container-pregunta1 .datos-login{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.container-pregunta1 .btn_limpiar{
+    background: white;
+    width: 100px;
+    border: 1px solid black;
+    margin-left: 100px;
+}
+
+
+.container-pregunta1 form .butones #btn_{
+    background: white;
+    width: 100px;
+    border: 1px solid black;
+    
+}
+
+.container-pregunta1 .teclado-virtual label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.container-pregunta1 .teclado-virtual table{
+    width: 200px;
+}
+
+.container-pregunta1 .teclado-virtual input[type="password"] {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.container-pregunta1 .teclado-virtual input[type="button"], td {
+    text-align: center;
+    width: 50px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.container-pregunta1 .teclado-virtual td:hover {
+    background-color: #eee;
+}
+
+.container-pregunta1 .teclado-virtual table {
+    margin: auto;
+}
+
+
+
+
+
+.contenido .container-calificaciones{
+    display: flex;
+    flex-direction: column;
 }

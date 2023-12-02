@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])){
+    header('Location:login.html');
+    // die("Debe Loguearse");
+}
+
+$id = $_SESSION['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,8 +17,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen Final</title>
     <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
 </head>
 <body>
+
+<?php 
+ 
+ include('db.php');
+
+ $sql = "SELECT materia FROM usuarios_materias WHERE idusuario = $id";
+
+
+ $result = $connect->query($sql);
+ if ($result->num_rows > 0) {
+    
+// echo $result;
+
+?>
     <div class="container">
 
         <div class="principal">
@@ -16,12 +43,15 @@
                 <div class="opciones">
                     <img src="./images/usfx.png" alt="usfx">
                     <div class="opcion">
-                        Opciones
+                        Materias
                     </div>
                 </div>
                 <div class="sub-menu" id="sub-menu">
-                    <div class="detalle">Detalle 1</div>
-                    <div class="detalle">Detalle 2</div>
+                    <?php  while ($row = $result->fetch_assoc()) { ?>
+                        
+                        <a href="javascript:abrirCalificaciones('<?php echo $row['materia'] ?>')"><div class="detalle"><?php echo $row['materia'] ?></div></a>
+                    <!-- <div class="detalle">Detalle 2</div> -->
+                   <?php } ?>
                 </div>
             </div>
             
@@ -76,4 +106,5 @@
         </div>
     </div>
 </body>
-</html>
+</html> 
+<?php } ?>
