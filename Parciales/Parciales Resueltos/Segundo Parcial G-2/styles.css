@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    margin-top: 1.5rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .menu{
+    background: yellow;
+    border: 2px solid rgb(57, 255, 47);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.container .menu .btn_menu{
+    background: red;
+    padding: 7px;
+    /* border: none; */
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    width: 64px;
+}
+
+.container .menu .botenes{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn{
+    background: white;
+    padding: 7px;
+    border: 2px solid black;
+    border-radius: 2px;
+    width: 55px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(57, 255, 47);
+}
+
+.contenido .titulo{
+    background: orange;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid rgb(19, 108, 241);
+    font-weight: bold;
+}
+
+.container .historial{
+    background: orange;
+    border: 2px solid rgb(19, 108, 241);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+
+/* PARA LA PREGUNTA 2 */
+.principal{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal .container-tabla{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    padding: 10px;
+    gap: 15px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal .container-tabla input{
+    width: 70px;
+    padding: 5px;
+}
+
+.principal .container-tabla .operaciones{
+    width: 180px;
+    /* border: 1px solid black; */
+}
+
+.principal .container-tabla .btn_calcular{
+    width: 70px;
+    padding: 5px;
+}
+
+
+.principal table{
+    margin-top: 1rem;
+    width: 200px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.principal table td{
+    border: 1px solid blue;
+    padding: 5px;
+}
+
+
+
+#form-numero{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-numero #numero{
+    padding: 5px;
+    border: 2px solid rgb(31, 71, 230);
+    border-radius: 4px;
+    width: 80px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#form-numero .btn_obtener{
+    background: rgb(31, 71, 230);
+    color: white;
+    border: 2px solid black;
+    width: 100px;
+    padding: 8px;
+}
+
+.numeros{
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    margin-top: 10px;
+    border: 2px solid black;
+    font-size: 1.1rem;
+}
+
+.hr{
+    margin-top: 10px;
+    border: 1px solid blue;
+    width: 150px;
+}
+
+.suma{
+    width: 100px;
+    padding: 8px;
+    margin-top: 10px;
+    background: rgb(10, 105, 214);
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    border: 2px solid black;
+}
+
+
+
+
+
+#form-masivo .datos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(54, 54, 54, 0.716);
+}
+
+.btn_insertar{
+    background: rgb(31, 71, 230);
+    color: white;
+    border: 2px solid rgb(10, 10, 10);
+    width: 100px;
+    padding: 8px;
+}
+
+#form-masivo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-masivo .datos input{
+    padding: 5px;
+    border: 2px solid rgb(4, 171, 68);
+    border-radius: 3px;
+    font-size: 1rem;
+}
+#form-masivo .datos select{
+    padding: 4px;
+    border: 1.5px solid rgb(4, 171, 68);
+    border-radius: 3px;
+    font-size: 1rem;
+
+}
+
+
+
+.container-calendario{
+    width: 100%;
+    display: flex;
+    border: 1px solid black;
+}
+
+.container-calendario .seleccionar{
+    padding: 10px;
+    width: 200px;
+    background: #c1bfbf;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-calendario .seleccionar select{
+    padding: 4px;
+}
+
+.container-calendario .resultado{
+    padding: 20px;
+    width: 100%;
+}
+
+.container-calendario .resultado table{
+    width: 100%;
+}
+
+.container-calendario .resultado table th,td{
+    font-size: 1.1rem;
+}
