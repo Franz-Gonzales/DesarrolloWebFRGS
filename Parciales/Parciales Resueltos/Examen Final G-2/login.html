@@ -48,40 +48,12 @@
             </div>
 
             <div class="butones" id="">
-                <button type="submit" id="btn_">Entrar</button>
+                <button type="submit" id="btn_" onclick="limpiar()">Entrar</button>
             </div>
         </form>
         <button class="btn_limpiar" onclick="limpiar()">Limpiar</button>
 
     </div>
 
-    <script>
-        function limpiar(){
-            document.getElementById('password').value = "";
-        }
-
-
-        function agregarNumeros(numero){
-            var password = document.getElementById('password');
-            password.value += numero;
-        }
-        // var password = document.getElementById('password');
-        function borrar(){
-            var password = document.getElementById('password').value;
-            // console.log(password);
-            
-            var ultimo_posicion = password.length;
-
-            // console.log(ultimo_posicion);
-
-            var delete_password = password.slice(0, ultimo_posicion - 1);
-            document.getElementById('password').value = delete_password;
-
-        }
-
-        // password.addEventListener('input', ()=>{
-        //     console.log(password.value);
-        // })
-    </script>
 </body>
 </html>

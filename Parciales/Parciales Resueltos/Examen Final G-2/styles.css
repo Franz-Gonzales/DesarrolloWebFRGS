@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 900px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border: 1px solid black;
+}
+
+.container .principal{
+    display: flex;
+}
+
+.container .principal .container-opciones{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border: 1px solid black;
+}
+
+.container .principal .container-opciones .opciones{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .principal .container-opciones .opciones img{
+    width: 100%;
+}
+
+.container .principal .container-opciones .opciones .opcion{
+    background: rgb(189, 71, 38);
+    color: white;
+    padding: 8px;
+    text-align: center;
+}
+
+.container .principal .container-opciones .sub-menu{
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid black;
+}
+
+.principal .container-opciones .sub-menu .detalle{
+    border: 2px solid rgb(248, 105, 34);
+    padding: 8px;
+    text-align: center;
+    color: rgb(85, 84, 84);
+}
+
+.container .pie{
+    width: 100%;
+    background: orange;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid rgb(46, 45, 45);
+}
+
+.principal .navigation{
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+}
+
+
+.principal .navigation .menu{
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    background: orange;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+.principal .navigation .menu .botenes{
+    display: flex;
+    border-right: 1px solid black;
+    height: 40px;
+    border-right: 2px solid rgb(6, 6, 6);
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal .navigation .menu .btn5{
+    border: none;
+}
+
+.principal .navigation .menu .botenes a .btn{
+    background: white;
+    padding: 10px;
+    width: 120px;
+    font-weight: bold;
+}
+
+.principal .navigation .menu .botenes a .btn:hover{
+    background: black;
+    color: white
+}
+
+.principal .navigation .titulo{
+    width: 100%;
+    padding: 14px;
+    background: rgb(254, 220, 172);
+    text-align: center;
+    font-weight: bold;
+    border: 2px dotted black;
+}
+
+
+/* CONTENIDO  */
+.principal .navigation .contenido{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal .navigation .contenido .card-container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: -2px 3px 8px rgb(146, 145, 145);
+
+}
+
+.principal .navigation .contenido .card-container .title{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    background: rgb(194, 198, 246);
+    padding: 20px;
+    padding-bottom: 55px;
+}
+
+.principal .navigation .contenido .card-container .perfil{
+    position: absolute;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgb(241, 238, 238);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    margin-left: 25px;
+}
+
+.principal .navigation .contenido .card-container .perfil img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.principal .navigation .contenido .card-container .title h2, p{
+    color: rgb(104, 116, 249);
+    font-weight: bold;
+}
+
+.principal .navigation .contenido .card-container .datos{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    padding-top: 70px;
+    margin-bottom: 20px;
+}
+
+.principal .navigation .contenido .card-container .datos h2{
+    font-size: 1.4rem;
+    color: rgb(107, 106, 106);
+    margin-bottom: 10px;
+}
+
+.principal .navigation .contenido .card-container .datos p{
+    color: rgb(131, 129, 129);
+}
+
+
+
+
+/* ESTILOS PARA EL LOGIN  */
+td{
+    width: 30px;
+    border: 1px solid black;
+}
+
+
+h2 {
+    color: #333;
+}
+
+.container-pregunta1 {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container-pregunta1 .butones{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-pregunta1 .teclado-virtual{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-pregunta1 form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.container-pregunta1 .datos-login{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.container-pregunta1 .btn_limpiar{
+    background: white;
+    width: 100px;
+    border: 1px solid black;
+    margin-left: 100px;
+}
+
+
+.container-pregunta1 form .butones #btn_{
+    background: white;
+    width: 100px;
+    border: 1px solid black;
+    
+}
+
+.container-pregunta1 .teclado-virtual label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.container-pregunta1 .teclado-virtual table{
+    width: 200px;
+}
+
+.container-pregunta1 .teclado-virtual input[type="password"] {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.container-pregunta1 .teclado-virtual input[type="button"], td {
+    text-align: center;
+    width: 50px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.container-pregunta1 .teclado-virtual td:hover {
+    background-color: #eee;
+}
+
+.container-pregunta1 .teclado-virtual table {
+    margin: auto;
+}
+
+
+
+
+
+.contenido .container-calificaciones{
+    display: flex;
+    flex-direction: column;
+}

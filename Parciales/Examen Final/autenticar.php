@@ -9,7 +9,7 @@ $password = sha1($_POST['password']);
 echo $usuario; 
 echo $password;
 
-$sql = "SELECT id, usuario, nivel FROM usuarios WHERE usuario = '$usuario'";
+$sql = "SELECT id, usuario, nivel FROM usuarios WHERE usuario = '$usuario' AND password = '$password'";
 
 echo $sql;
 
