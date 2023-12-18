@@ -19,6 +19,7 @@ body{
     border: 1px solid black;
 }
 
+
 .container .principal{
     display: flex;
 }
@@ -44,6 +45,15 @@ body{
     color: white;
     padding: 8px;
     text-align: center;
+}
+
+.container .principal .container-opciones .opciones .opcion a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 8px;
+    text-align: center;
+
 }
 
 .container .principal .container-opciones .sub-menu{
@@ -92,7 +102,7 @@ body{
     justify-content: center;
 }
 
-.principal .navigation .menu .btn5{
+.principal .navigation .menu .btn_5{
     border: none;
 }
 
@@ -101,6 +111,18 @@ body{
     padding: 10px;
     width: 120px;
     font-weight: bold;
+}
+
+.principal .navigation .menu .botenes .btn4{
+    background: white;
+    padding: 10px;
+    width: 120px;
+    font-weight: bold;
+}
+
+.principal .navigation .menu .botenes .btn4:hover{
+    background: black;
+    color: white
 }
 
 .principal .navigation .menu .botenes a .btn:hover{
@@ -205,17 +227,23 @@ h2 {
 }
 
 .container-pregunta1 {
+    border: 1px solid rgba(0, 0, 0, 0.214);
+    margin-top: 1.5rem;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 4px;
 }
 
-.container-pregunta1 .butones{
-    width: 200px;
-    display: flex;
-    flex-direction: row;
+.container-pregunta1 form #btn_entrar{
+    width: 100px;
+    background: white;
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .container-pregunta1 .teclado-virtual{
@@ -234,6 +262,7 @@ h2 {
 }
 
 .container-pregunta1 .datos-login{
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -245,7 +274,12 @@ h2 {
     background: white;
     width: 100px;
     border: 1px solid black;
-    margin-left: 100px;
+    margin-left: 150px;
+}
+
+.container-pregunta1 .datos-login .datos input{
+    padding: 5px;
+
 }
 
 
@@ -298,4 +332,246 @@ h2 {
 .contenido .container-calificaciones{
     display: flex;
     flex-direction: column;
+}
+
+.container-alumnos{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.container-alumnos .tabla-alumnos{
+    width: 100%;
+
+}
+
+.container-alumnos .tabla-alumnos th{
+    background: orange;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
+.container-alumnos .tabla-alumnos td{
+    border: 1.5px solid orange;
+    background: rgb(248, 237, 217);
+}
+
+
+.btn_insertar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+.formulario {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.formulario div {
+    margin-bottom: 15px;
+}
+
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario .btn_insertar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formulario .btn_insertar:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+.horarios{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+}
+
+.horarios .tabla-horarios{
+    width: 100%;
+    border: 1px solid #1a1919;
+    /* border-collapse: collapse; */
+    border-radius: 4px;
+    overflow: hidden;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.horario{
+    background: yellow;
+}
+
+.horario2{
+    background: yellow;
+}
+
+.horarios .horas, th{
+    background: rgb(72, 118, 254);
+}
+
+.horarios .tabla-horarios th{
+    padding: 5px;
+}
+
+
+
+.contenido-calificaciones{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.contenido-calificaciones select{
+    padding: 4px;
+    border: 2px solid greenyellow;
+}
+
+
+.container-calificaciones{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+}
+
+.container-calificaciones #form-edit{
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-calificaciones table{
+    border: 1px solid #1a1919;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.container-calificaciones table .nombres{
+    width: 220px;
+}
+
+.container-calificaciones table td input{
+    width: 60px;
+    padding: 5px;
+    border: 2.5px solid orange;
+    text-align: center;
+}
+
+.container-calificaciones table th{
+    padding: 10px;
+}
+
+.container-calificaciones #form-edit button{
+    padding: 8px;
+    width: 150px;
+    background: rgb(47, 105, 240);
+    color: white;
+    border-radius: 3px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    /* background-color: rgba(176, 252, 237, 0.895); */
+}
+
+
+.informes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.informes #form-informe{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+.informes #form-informe select{
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.informes #form-informe input{
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    width: 80px;
 }

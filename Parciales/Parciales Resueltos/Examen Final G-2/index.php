@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])){
+    header('Location:login.html');
+    // die("Debe Loguearse");
+}
+
+$id = $_SESSION['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,6 +20,20 @@
     <script src="./script.js"></script>
 </head>
 <body>
+
+<?php 
+ 
+ include('db.php');
+
+ $sql = "SELECT materia FROM usuarios_materias WHERE idusuario = $id";
+
+
+ $result = $connect->query($sql);
+ if ($result->num_rows > 0) {
+    
+// echo $result;
+
+?>
     <div class="container">
 
         <div class="principal">
@@ -16,13 +42,16 @@
             <div class="container-opciones">
                 <div class="opciones">
                     <img src="./images/usfx.png" alt="usfx">
-                    <div class="opcion">
-                        Opciones
+                    <div class="opcion" id="opcion">
+                        Asignaturas
                     </div>
                 </div>
                 <div class="sub-menu" id="sub-menu">
-                    <div class="detalle">Detalle 1</div>
-                    <div class="detalle">Detalle 2</div>
+                    <?php  while ($row = $result->fetch_assoc()) { ?>
+                        
+                        <a href="javascript:mostrarHorarios('<?php echo $row['materia'] ?>')"><div class="detalle"><?php echo $row['materia'] ?></div></a>
+                    <!-- <div class="detalle">Detalle 2</div> -->
+                   <?php } ?>
                 </div>
             </div>
             
@@ -34,16 +63,17 @@
                         <a href=""><button class="btn">Pregunta 1</button></a>
                     </div>
                     <div class="botenes">
-                        <a href=""><button class="btn">Pregunta 2</button></a>
+                        <a href="javascript:cargarContenido2('pregunta3.php')"><button class="btn">Pregunta 2</button></a>
                     </div>
                     <div class="botenes">
-                        <a href=""><button class="btn">Pregunta 3</button></a>
+                        <a href="javascript:horarios()"><button class="btn">Pregunta 3</button></a>
                     </div>
                     <div class="botenes">
-                        <a href=""><button class="btn">Pregunta 4</button></a>
+                        <!-- <a href=""><button class="btn" onclick="calificaciones()">Pregunta 4</button></a> -->
+                        <button class="btn4" onclick="calificaciones()">Pregunta 4</button>
                     </div>
-                    <div class="botenes  btn5">
-                        <a href=""><button class="btn">Pregunta 5</button></a>
+                    <div class="botenes  btn_5">
+                        <a href="javascript:cargarContenido5('formularioInforme.php')"><button class="btn btn5">Pregunta 5</button></a>
                     </div>
                 </div>
 
@@ -52,6 +82,7 @@
                 </div>
 
                 <div class="contenido" id="contenido">
+
                     <div class="card-container">
                         <div class="title">
                             <h2>SIS 256 Programación web</h2>
@@ -78,3 +109,4 @@
     </div>
 </body>
 </html> 
+<?php } ?>
