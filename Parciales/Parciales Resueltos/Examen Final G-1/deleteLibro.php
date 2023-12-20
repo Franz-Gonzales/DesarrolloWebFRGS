@@ -10,6 +10,7 @@ if(isset($_GET['id'])){
     $sql = "DELETE FROM libros WHERE id = $id";
 
     if($connect->query($sql)){
+        
         echo "Se elimino correctamente";
     }else{
         echo "Error: " . $sql . "<br>" . $connect->error;

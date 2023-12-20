@@ -3,13 +3,11 @@ include('alumnos.php');
 
 session_start();
 
-
 if(!isset($_SESSION['ListaAlumnos'])){
 
     $_SESSION['ListaAlumnos'] = new ListaAlumnos();
 
 }
-
 
 if ($_POST) {
 
@@ -31,7 +29,6 @@ if($_GET){
 $alumnos = $_SESSION['ListaAlumnos']->mostrarLista();
 
 ?>
-
 
 <script src="./script.js"></script>
 <div class="container-alumnos">

@@ -2,7 +2,6 @@
     include('db.php');
 
     $id = $_GET['id'];
-
     // echo $id;
 
     $sql = "SELECT * FROM libros WHERE id = $id";
