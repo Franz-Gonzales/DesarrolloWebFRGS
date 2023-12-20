@@ -12,7 +12,7 @@ if (isset($_POST['id'])) {
 
     
     // Para actualizar la imagen
-    if (isset($_FILES['fotografia'])) {
+    if (!isset($_FILES['fotografia'])) {
         $archivo_original = (isset($_FILES['fotografia']['name'])) ? $_FILES['fotografia']['name'] : '';
         // echo $archivo_original;
         
